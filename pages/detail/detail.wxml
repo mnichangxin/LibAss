@@ -1,0 +1,31 @@
+<!--detail.wxml-->
+<view class="container">
+  <view class="nav-top">
+    <image src="../static/images/book1.jpg"></image>
+    <view class="book">
+      <text class="book-title">百年孤独</text>
+      <text class="book-author">作者</text>
+      <text class="book-publish">出版信息</text>
+      <text class="book-categoriy">分类</text>
+      <text class="book-holding"></text>
+    </view>
+  </view>
+  <view class="main">
+    <view class="main-list">
+      <view class="list-tille">内容简介</view>
+      <view class="list-content"></view>
+    </view>
+    <view class="main-list">
+      <view class="list-tille">目录</view>
+      <view class="list-content"></view>
+    </view>
+    <view class="main-list">
+      <view class="list-tille">书评</view>
+      <view class="list-content"></view>
+    </view>
+    <view class="main-list">
+      <view class="list-tille">导读</view>
+      <view class="list-content"></view>
+    </view>
+  </view>
+</view>

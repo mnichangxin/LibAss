@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/message/message",
+    "pages/me/me",
+    "pages/navigation/navigation",
+    "pages/reverse/reverse",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#09BB07",
+    "navigationBarTitleText": "借阅伴侣",
+    "backgroundColor": "#E0E0E0",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "color": "#888",
+    "selectedColor": "#09BB07",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/static/icon/index.png",
+        "selectedIconPath": "pages/static/icon/index_selected.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "pages/static/icon/message.png",
+        "selectedIconPath": "pages/static/icon/message_selected.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我",
+        "iconPath": "pages/static/icon/me.png",
+        "selectedIconPath": "pages/static/icon/me_selected.png"
+      }
+    ]
+  }
+}

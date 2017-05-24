@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="top">
+    <view class="top-title">
+      <image src="../static/icon/logo.png" mode="scaleToFill"></image>
+      <text class="top-title-text">图书馆借阅助手</text>
+    </view>
+    <view class="top-search">
+      <input type="text" placeholder="书目检索" confirm-type="search" placeholder-class="input-placeholder" />
+    </view>
+  </view>
+  <view class="main">
+    <view class="main-function">
+      <view class="scan-code" bindtap="scanTap">
+        <image src="../static/icon/scan.png"></image>
+        <text>扫码借书</text>
+      </view>
+      <navigator class="book-reverse" url="../reverse/reverse" hover-class="none">
+        <image src="../static/icon/reverse.png"></image>
+        <text>在线预订</text>
+      </navigator>
+      <navigator class="book-navigation" url="../navigation/navigation" hover-class="none">
+        <image src="../static/icon/navigation.png"></image>
+        <text>图书导航</text>
+      </navigator>
+    </view>
+    <view class="main-show">
+      <view class="main-show-title">图书推荐</view>
+      <view class="list">
+        <view class="list-item">
+          <image src="../static/images/book1.jpg"></image>
+          <view class="book-info">
+            <view class="book-title">百年孤独</view>
+            <view class="book-author">[哥伦比亚] 加西亚·马尔克斯</view>
+            <view class="book-category"><text>分类：</text>小说/名著</view>
+            <navigator url="../detail/detail" class="book-detail" hover-class="none">详细</navigator>
+          </view>
+        </view>
+        <view class="list-item">
+          <image src="../static/images/book1.jpg"></image>
+          <view class="book-info">
+            <view class="book-title">百年孤独</view>
+            <view class="book-author">[哥伦比亚] 加西亚·马尔克斯</view>
+            <view class="book-category"><text>分类：</text>小说/名著</view>
+            <navigator url="../detail/detail" class="book-detail">详细</navigator>
+          </view>
+        </view>
+        <view class="list-item">
+          <image src="../static/images/book1.jpg"></image>
+          <view class="book-info">
+            <view class="book-title">百年孤独</view>
+            <view class="book-author">[哥伦比亚] 加西亚·马尔克斯</view>
+            <view class="book-category"><text>分类：</text>小说/名著</view>
+            <navigator url="../detail/detail" class="book-detail">详细</navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,43 @@
+<!--me.wxml-->
+<view class="container">
+  <view class="top">
+    <view class="login">
+      <view class="user-head">
+        <image src="../static/icon/user-head.png"></image>
+      </view>
+      <view class="user-name">
+        <text>李昶昕</text>
+      </view>
+    </view>
+    <view class="non-login">
+      <view class="user-head">
+        <image src="../static/icon/non-login.png"></image>
+      </view>
+      <view class="non-login-btn">
+        <text>登录</text>
+        <image src="../static/icon/login.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="main">
+    <view class="menu">
+      <view class="menu-list">
+        <image src="../static/icon/history.png" class="list-icon"></image>
+        <text>借阅历史</text>
+        <image src="../static/icon/arrow.png" class="list-arrow"></image>
+      </view>
+      <view class="menu-list">
+        <image src="../static/icon/current.png" class="list-icon"></image>
+        <text>当前借阅</text>
+        <image src="../static/icon/arrow.png" class="list-arrow"></image>
+      </view>
+    </view>
+    <view class="menu menu-set">
+      <view class="menu-list">
+        <image src="../static/icon/set.png" class="list-icon"></image>
+        <text>设置</text>
+        <image src="../static/icon/arrow.png" class="list-arrow"></image>
+      </view>
+    </view>
+  </view>
+</view>

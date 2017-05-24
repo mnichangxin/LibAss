@@ -1,0 +1,103 @@
+/* me.wxss */
+
+/* top */
+.top {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 300rpx;
+  background: #09BB07;
+  color: #fff;
+}
+.login .user-head, .non-login .user-head {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.login .user-head image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.non-login {
+  display: none;
+  /*display: flex;*/
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 13pt;
+}
+.non-login .user-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120rpx;
+  height: 120rpx;
+  background: #CCC;
+  border-radius: 50%;
+}
+.non-login .user-head image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.non-login .non-login-btn {
+  display: flex;
+  justify-content: center;
+  height: 60rpx;
+} 
+.non-login .non-login-btn image {
+  margin-left: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* main */
+.main {
+  width: 100%;
+}
+.menu {
+  margin-top: 20rpx;
+  width: 100%;
+}
+.menu .menu-list {
+  position: relative;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #DEDEDE;
+  background: #fff;
+  font-size: 12pt;
+  color: #515151;
+}
+.menu .menu-set {
+  margin-top: 20rpx;
+}
+.menu-list image {
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+}
+.menu-list text {
+  margin-left: 20rpx;
+  vertical-align: middle;
+}
+.menu-list .list-arrow {
+  position: absolute;
+  top: 25rpx;
+  right: 30rpx;
+}
+
+
