@@ -31,6 +31,11 @@
         <text>当前借阅</text>
         <image src="../static/icon/arrow.png" class="list-arrow"></image>
       </view>
+      <view class="menu-list">
+        <image src="../static/icon/menu_reverse.png" class="list-icon"></image>
+        <text>我的预订</text>
+        <image src="../static/icon/arrow.png" class="list-arrow"></image>
+      </view>
     </view>
     <view class="menu menu-set">
       <view class="menu-list">
