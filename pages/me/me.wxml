@@ -13,10 +13,10 @@
       <view class="user-head">
         <image src="../static/icon/non-login.png"></image>
       </view>
-      <view class="non-login-btn">
+      <navigator url="../login/login" class="non-login-btn">
         <text>登录</text>
         <image src="../static/icon/login.png"></image>
-      </view>
+      </navigator>
     </view>
   </view>
   <view class="main">
