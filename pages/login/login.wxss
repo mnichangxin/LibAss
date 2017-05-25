@@ -1,7 +1,7 @@
 /* login.wxss */
 
-/* login */
-.login { 
+/* login, reg */
+.login, .reg { 
   margin: auto;
   padding-top: 40rpx;
   width: 90%;  
@@ -39,6 +39,8 @@
     color: #fff; 
     font-size: 12pt;  
 }
+
+/* login */
 .login-weixin {
   display: flex;
   justify-content: space-between;
@@ -58,3 +60,9 @@
 }
 
 /* reg */
+.return {
+  margin-top: 40rpx;
+  text-align: center;
+  font-size: 12pt;
+  color: #09BB07;
+}

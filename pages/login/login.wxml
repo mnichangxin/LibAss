@@ -1,6 +1,6 @@
 <!--login.wxml-->
 <view class="container">
-  <view class="login">
+  <view class="login" wx:if="{{condition}}">
     <view class="section">
         <view class="section-title">用户名：</view>
         <input name="username" placeholder="请输入手机号" />
@@ -10,17 +10,34 @@
         <input password type="text" name="password" placeholder="密码" />
     </view>
     <view class="button" id='button'>
-      <button formType="submit" bindtap="loginBtnClick">登录</button>
+      <button formType="submit">登录</button>
     </view>
     <view class="tip" id="tip"></view>
     <view class="login-weixin">
       <image src="../static/icon/weixin.png"></image>
-      <navigator class="reg-btn">立即注册</navigator>
+      <navigator class="reg-btn" bindtap="toReg">立即注册</navigator>
     </view>
   </view>
-  <view class="reg">
-    <view class="section"></view>
-    <view class="section"></view>
-    <view class="button"></view>
+  <view class="reg" wx:else>
+    <view class="section">
+      <view class="section-title">用户名：</view>
+      <input name="username" placeholder="除下划线，不能含特殊字符" />
+    </view>
+    <view class="section">
+      <view class="section-title">手机号：</view>
+      <input name="username" placeholder="11位手机号" />
+    </view>
+    <view class="section">
+        <view class="section-title">密码：</view>
+        <input password type="text" name="password" placeholder="至少6位" />
+    </view>
+    <view class="section">
+        <view class="section-title">确认：</view>
+        <input password type="text" name="password" placeholder="确认密码" />
+    </view>
+    <view class="button" id='button'>
+      <button formType="submit">注册</button>
+    </view>
+    <view class="return" bindtap="toLogin">返回登录</view>
   </view>
 </view>
