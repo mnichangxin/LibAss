@@ -1,5 +1,6 @@
 <!--login.wxml-->
 <view class="container">
+  <!-- 根据condition判断渲染哪个模板 -->
   <view class="login" wx:if="{{condition}}">
     <view class="section">
         <view class="section-title">用户名：</view>
