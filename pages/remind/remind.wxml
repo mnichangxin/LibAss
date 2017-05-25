@@ -1,0 +1,11 @@
+<!--remind.wxml-->
+<view class="container">
+  <view class="reverse-book">
+    <text>当前图书：<text class="book-name">百年孤独</text></text>
+    <text>馆藏：<text class="holding-num">0</text></text>
+  </view>
+  <view class="section">
+    <view class="tip">当书有归还时会提醒用户</view>
+    <button class="button">确认订阅</button>
+  </view>
+</view>

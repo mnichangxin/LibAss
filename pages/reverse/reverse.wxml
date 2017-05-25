@@ -1,5 +1,9 @@
 <!--reserve.wxml-->
 <view class="container">
+  <view class="reverse-book">
+    <text>预约的图书：<text class="book-name">百年孤独</text></text>
+    <text>馆藏：<text class="holding-num">30</text></text>
+  </view>
   <view class="section">
     <view class="section-title">请选择预约时间：</view>
     <picker mode="date" value="{{date}}" start="{{date_start}}" end="{{date_end}}" bindchange="dateChange" class="picker-date">
