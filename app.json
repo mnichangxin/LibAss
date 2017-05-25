@@ -5,7 +5,8 @@
     "pages/me/me",
     "pages/navigation/navigation",
     "pages/reverse/reverse",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",
