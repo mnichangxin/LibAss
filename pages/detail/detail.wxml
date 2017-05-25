@@ -11,7 +11,7 @@
   <view class="main">
     <view class="main-list book-info">
       <text class="book-publish">南海出版公司</text>
-      <text class="book-holding">馆藏<text class="book-holding-num">30</text>本</text>
+      <text class="book-holding">馆藏<text class="book-holding-num">0</text>本</text>
     </view>
     <view class="main-list">
       <navigator url="../reverse/reverse" hover-class="none" class="reverse" wx:if="{{book.holding_num > 0}}">在线预订</navigator>
