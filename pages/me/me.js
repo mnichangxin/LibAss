@@ -17,6 +17,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    // 检查登录态是否过期
     wx.checkSession({
       success: function() {
         console.log('success!');

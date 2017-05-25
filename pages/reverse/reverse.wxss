@@ -1,1 +1,37 @@
 /* reserve.wxss */
+
+.section {
+  width: 100%;
+  margin-top: 40rpx;
+}
+.section-title {
+  font-size: 13pt;
+  text-align: center;
+}
+.picker-date, .picker-time {
+  width: 100%;
+  line-height: 80rpx;
+  margin-top: 60rpx;
+  background: #EEEEEE;
+  text-align: center;
+  font-size: 12pt;
+}
+.picker text {
+  margin-left: 10rpx;
+  font-size: 11pt;
+}
+.tip {
+  margin-top: 60rpx;
+  text-align: center;
+  font-size: 10pt;
+  color: #888888;
+}
+.button {
+  margin-top: 60rpx;
+  width: 90%;
+  line-height: 80rpx;
+  border: 0;
+  border-radius: 4rpx;
+  background: #09BB07;
+  color: #fff;
+}

@@ -1,2 +1,18 @@
 <!--reserve.wxml-->
-<text>reserve.wxml</text>
+<view class="container">
+  <view class="section">
+    <view class="section-title">请选择预约时间：</view>
+    <picker mode="date" value="{{date}}" start="{{date_start}}" end="{{date_end}}" bindchange="dateChange" class="picker-date">
+      <view class="picker">
+        预约日期: <text>{{date}}</text>
+      </view>
+    </picker>
+    <picker mode="time" value="{{time}}" start="08:00" end="21:00" bindchange="timeChange" class="picker-time">
+      <view class="picker">
+        预约时间: <text>{{time}}</text>
+      </view>
+    </picker>
+    <view class="tip">预约后请三天内到图书馆取书，过期无效</view>
+    <button class="button">确认选择</button>
+  </view>
+</view>
