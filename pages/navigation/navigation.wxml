@@ -11,7 +11,7 @@
           <view class="list-list-title">{{i.title}}</view>
           <view class="list-list-content">
             <block wx:for="{{i.third}}" wx:for-item="j">
-              <navigator url="{{'../query/query?' + j}}" class="list-item">{{j}}</navigator>
+              <navigator url="{{'../query/query?query_name=' + j}}" class="list-item">{{j}}</navigator>
             </block>
           </view>
         </view>

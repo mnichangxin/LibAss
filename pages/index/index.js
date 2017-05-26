@@ -5,7 +5,6 @@ var app = getApp()
 
 Page({
   data: {
-    // 推荐列表
     book: [
       {
         id: '0001', // 唯一ID
