@@ -1,0 +1,53 @@
+/* query.wxss */
+
+/* section */
+.section {
+  padding: 40rpx 0;
+  width: 100%;
+  background: #fff;
+  color: #888;
+}
+.section-title {
+  text-align: center;
+  font-size: 12pt;
+  color: #000000;
+}
+.section .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+  width: 100%;
+}
+.section .list .list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  width: 90%;
+  height: 350rpx;
+  border-radius: 4rpx;
+  box-shadow: 0 0 16rpx #E0E0E0;
+  background: #fff;
+}
+.list-item image {
+  width: 300rpx;
+  height: 300rpx;
+}
+.list-item .book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  font-size: 10pt;
+}
+.list-item .book-title {
+  font-size: 11pt;
+  color: #353535;
+}
+.list-item  .book-detail {
+  font-size: 11pt;
+  color: #09BB07;
+}
