@@ -1,9 +1,8 @@
 /* index.js */
 
-// 获取应用实例
-var app = getApp()
-
 Page({
+
+  // 初始化数据
   data: {
     book: [
       {
@@ -27,27 +26,61 @@ Page({
         book_author: '[哥伦比亚] 加西亚·马尔克斯', 
         book_category: '小说/名著'
       }
-    ]
+    ],
+    search_history: [
+      '百年孤独', '白夜行', '摆渡人'
+    ],
+    search_data: {
+      condition: false,
+      isHos: true,
+    },
+    style: {
+      border_raduis: '40rpx'
+    }
   },
 
-  //事件处理函数
-  scanTap: function() {
+  // 页面加载
+  onLoad: function () {
+    
+  },
+
+  // 扫码
+  scanTap: function () {
     wx.scanCode({
-      success: function() {
+      success: function () {
         onlyFromCamera: true
       }
     });
   },
 
-  onLoad: function () {
-    var that = this
-
-    // //调用应用实例的方法获取全局数据
-    // app.getUserInfo(function(userInfo){
-    //   //更新数据
-    //   that.setData({
-    //   })
-    // })
+  // 搜索框事件
+  focusTap: function() {
+    this.data.search_data.condition = true;
+    this.setData({
+      search_data: this.data.search_data,
+      style: {
+        border_raduis: '0'
+      }
+    });
+  },
+  blurTap: function() {
+    this.data.search_data.condition = false;
+    this.setData({
+      search_data: this.data.search_data,
+      style: {
+        border_raduis: '40rpx'
+      }
+    });
+  },
+  searchTap: function() {
+    
+  },
+  clearTap: function() {
+    this.data.search_data.isHos = false;
+    this.setData({
+      search_data: this.data.search_data,
+      search_hository: []
+    });
   }
 
 });

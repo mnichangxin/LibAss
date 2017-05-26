@@ -17,6 +17,30 @@
 .top-search {
   height: 200rpx;
 }
+.comb {
+  position: relative;
+  width: 80%;
+}
+.search-hository {
+  position: absolute;
+  top: 80rpx;
+  width: 100%;
+  background: #EFEFEF;
+}
+.hos-item, .hos-clear {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 12pt;
+}
+.hos-item {
+  color: #888888;
+}
+.hos-clear {
+  background: #C3C4C4;
+  color: #fff;
+}
 .top-title image {
   width: 64rpx;
   height: 64rpx;
@@ -27,7 +51,7 @@
   font-size: 16pt;
 }
 .top-search input {
-  width: 80%;
+  width: 100%;
   height: 80rpx;
   border-radius: 40rpx;
   background: #fff;
@@ -39,6 +63,7 @@
   color: #b2b2b2;
   font-size: 11pt;
 }
+
 
 /* main */
 .main {
