@@ -7,7 +7,8 @@
     "pages/reverse/reverse",
     "pages/detail/detail",
     "pages/login/login",
-    "pages/remind/remind"
+    "pages/remind/remind",
+    "pages/query/query"
   ],
   "window": {
     "backgroundTextStyle": "light",

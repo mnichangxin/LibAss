@@ -44,7 +44,7 @@
   align-items: center;
   width: 120rpx;
   height: 120rpx;
-  background: #CCC;
+  background: #ccc;
   border-radius: 50%;
 }
 .non-login .user-head image {
@@ -53,14 +53,18 @@
   border-radius: 50%;
 }
 .non-login .non-login-btn {
-  display: flex;
-  justify-content: center;
-  height: 60rpx;
+  height: 80rpx;
 } 
+.non-login .non-login-btn text {
+  display: inline-block;
+  vertical-align: middle;
+}
 .non-login .non-login-btn image {
+  display: inline-block;
   margin-left: 10rpx;
   width: 40rpx;
   height: 40rpx;
+  vertical-align: middle;
 }
 
 /* main */
