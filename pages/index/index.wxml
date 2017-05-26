@@ -6,7 +6,13 @@
       <text class="top-title-text">图书馆借阅助手</text>
     </view>
     <view class="top-search">
-      <input type="text" placeholder="书目检索" confirm-type="search" placeholder-class="input-placeholder" />
+      <view class="comb">
+        <input type="text" placeholder="书目检索" confirm-type="search" placeholder-class="input-placeholder" bindconfirm="searchTap" bindfocus="focusTap" bindblur="blurTap" style="{{'border-radius:' + style.border_raduis + ';'}}" />
+        <view class="search-hository" wx:if="{{search_data.condition}}">
+          <view class="hos-item" wx:for="{{search_history}}" wx:if="{{search_data.isHos}}" wx:key="i">{{item}}</view>            
+          <view class="hos-clear" bindtap="clearTap">清除搜索历史</view>
+        </view>
+      </view>
     </view>
   </view>
   <view class="main">
@@ -27,7 +33,7 @@
     <view class="main-show">
       <view class="main-show-title">图书推荐</view>
       <view class="list">
-        <view wx:for="{{book}}" class="list-item">
+        <view wx:for="{{book}}" wx:key="i" class="list-item">
           <image src="{{item.img_src}}"></image>
           <view class="book-info">
             <view class="book-title">{{item.book_title}}</view>
