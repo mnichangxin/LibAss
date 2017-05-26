@@ -6,24 +6,27 @@ var app = getApp()
 Page({
   data: {
     // 推荐列表
-    rec_lists: [
+    book: [
       {
+        id: '0001', // 唯一ID
         img_src: '../static/images/book1.jpg', // 图片路径
         book_title: '百年孤独', // 图书名称
         book_author: '[哥伦比亚] 加西亚·马尔克斯', // 图书作者
-        book_category: '小说/名著', // 图书分类
-      }, 
-      {
-        img_src: '../static/images/book1.jpg',
-        book_title: '百年孤独',
-        book_author: '[哥伦比亚] 加西亚·马尔克斯',
-        book_category: '小说/名著',
+        book_category: '小说/名著' // 图书分类
       },
       {
+        id: '0002', 
         img_src: '../static/images/book1.jpg',
-        book_title: '百年孤独',
-        book_author: '[哥伦比亚] 加西亚·马尔克斯',
-        book_category: '小说/名著',
+        book_title: '百年孤独', 
+        book_author: '[哥伦比亚] 加西亚·马尔克斯', 
+        book_category: '小说/名著'
+      },
+      {
+        id: '0003',
+        img_src: '../static/images/book1.jpg',
+        book_title: '百年孤独', 
+        book_author: '[哥伦比亚] 加西亚·马尔克斯', 
+        book_category: '小说/名著'
       }
     ]
   },
