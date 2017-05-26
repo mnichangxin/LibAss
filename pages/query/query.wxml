@@ -1,33 +1,15 @@
 <!--query.wxml-->
 <view class="container">
   <view class="section">
-      <view class="section-title">情感/婚姻</view>
+      <view class="section-title">{{query_name}}</view>
       <view class="list">
-        <view class="list-item">
-          <image src="../static/images/book1.jpg"></image>
+        <view class="list-item" wx:for="{{book}}">
+          <image src="{{item.img_src}}"></image>
           <view class="book-info">
-            <view class="book-title">百年孤独</view>
-            <view class="book-author">[哥伦比亚] 加西亚·马尔克斯</view>
-            <view class="book-category"><text>分类：</text>小说/名著</view>
-            <navigator url="../detail/detail" class="book-detail" hover-class="none">详细</navigator>
-          </view>
-        </view>
-        <view class="list-item">
-          <image src="../static/images/book1.jpg"></image>
-          <view class="book-info">
-            <view class="book-title">百年孤独</view>
-            <view class="book-author">[哥伦比亚] 加西亚·马尔克斯</view>
-            <view class="book-category"><text>分类：</text>小说/名著</view>
-            <navigator url="../detail/detail" class="book-detail">详细</navigator>
-          </view>
-        </view>
-        <view class="list-item">
-          <image src="../static/images/book1.jpg"></image>
-          <view class="book-info">
-            <view class="book-title">百年孤独</view>
-            <view class="book-author">[哥伦比亚] 加西亚·马尔克斯</view>
-            <view class="book-category"><text>分类：</text>小说/名著</view>
-            <navigator url="../detail/detail" class="book-detail">详细</navigator>
+            <view class="book-title">{{item.book_title}}</view>
+            <view class="book-author">{{item.book_author}}</view>
+            <view class="book-category"><text>分类：</text>{{item.book_category}}</view>
+            <navigator url="{{'../detail/detail?id=' + item.id}}" class="book-detail" hover-class="none">详细</navigator>
           </view>
         </view>
       </view>

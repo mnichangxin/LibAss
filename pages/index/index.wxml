@@ -33,7 +33,7 @@
             <view class="book-title">{{item.book_title}}</view>
             <view class="book-author">{{item.book_author}}</view>
             <view class="book-category"><text>分类：</text>{{item.book_category}}</view>
-            <navigator url="{{'../detail/detail?' + item.id}}" class="book-detail">详细</navigator>
+            <navigator url="{{'../detail/detail?id=' + item.id}}" class="book-detail">详细</navigator>
           </view>
         </view>
       </view>

@@ -14,8 +14,8 @@
       <text class="book-holding">馆藏<text class="book-holding-num">{{book.book_holding}}</text>本</text>
     </view>
     <view class="main-list">
-      <navigator url="{{'../reverse/reverse?' + book.id}}" hover-class="none" class="reverse" wx:if="{{book.book_holding > 0}}">在线预订</navigator>
-      <navigator url="{{'../remind/remind?' + book.id}}" hover-class="none" class="reverse" wx:else>有书提醒</navigator>
+      <navigator url="{{'../reverse/reverse?id=' + book.id}}" hover-class="none" class="reverse" wx:if="{{book.book_holding > 0}}">在线预订</navigator>
+      <navigator url="{{'../remind/remind?id=' + book.id}}" hover-class="none" class="reverse" wx:else>有书提醒</navigator>
     </view>
     <view class="main-list">
       <view class="list-title">内容简介</view>
