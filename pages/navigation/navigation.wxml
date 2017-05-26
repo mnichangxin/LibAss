@@ -4,78 +4,15 @@
     <input type="text" placeholder="搜索图书" placeholder-class="search-placeholder" confirm-type="search" />
   </view>
   <view class="main">
-    <view class="list">
-      <view class="list-title">文学</view>
+    <view class="list" wx:for="{{primary}}">
+      <view class="list-title">{{item.title}}</view>
       <view class="list-content">
-        <view class="list-list">
-          <view class="list-list-title">小说</view>
+        <view class="list-list" wx:for="{{item.second}}" wx:for-item="i">
+          <view class="list-list-title">{{i.title}}</view>
           <view class="list-list-content">
-            <navigator url="../query/query?id=0001" class="list-item">情感/婚姻</navigator>
-            <navigator class="list-item">穿越/重生</navigator>
-            <navigator class="list-item">历史</navigator>
-            <navigator class="list-item">惊悚/恐怖</navigator>
-            <navigator class="list-item">奇幻/玄幻</navigator>
-            <navigator class="list-item">官场</navigator>
-            <navigator class="list-item">社会</navigator>
-            <navigator class="list-item">军事</navigator>
-            <navigator class="list-item">外国小说</navigator>
-            <navigator class="list-item">中国当代小说</navigator>
-          </view>
-        </view>
-        <view class="list-list">
-          <view class="list-list-title">文学</view>
-          <view class="list-list-content">
-            <navigator class="list-item">中国文学</navigator>
-            <navigator class="list-item">外国文学</navigator>
-            <navigator class="list-item">纪实文学</navigator>
-            <navigator class="list-item">名家作品</navigator>
-            <navigator class="list-item">文学评论研究</navigator>
-          </view>
-        </view>
-        <view class="list-list">
-          <view class="list-list-title">青春文学</view>
-          <view class="list-list-content">
-            <navigator class="list-item">古代言情</navigator>
-            <navigator class="list-item">爱情/情感</navigator>
-            <navigator class="list-item">校园</navigator>
-            <navigator class="list-item">叛逆/成长</navigator>
-          </view>
-        </view>
-        <view class="list-list">
-          <view class="list-list-title">传记</view>
-          <view class="list-list-content">
-            <navigator class="list-item">政治人物</navigator>
-            <navigator class="list-item">历代帝王</navigator>
-            <navigator class="list-item">领袖首脑</navigator>
-            <navigator class="list-item">军事任务</navigator>
-            <navigator class="list-item">财经人物</navigator>
-          </view>
-        </view>
-      </view>
-    </view>
-    <view class="list">
-      <view class="list-title">科技</view>
-      <view class="list-content">
-        <view class="list-list">
-          <view class="list-list-title">科普读物</view>
-          <view class="list-list-content">
-            <navigator class="list-item">数理化</navigator>
-            <navigator class="list-item">航天航空</navigator>
-            <navigator class="list-item">百科知识</navigator>
-            <navigator class="list-item">生物世界</navigator>
-            <navigator class="list-item">人类故事</navigator>
-            <navigator class="list-item">神秘世界</navigator>
-            <navigator class="list-item">科学史话</navigator>
-          </view>
-        </view>
-        <view class="list-list">
-          <view class="list-list-title">自然科学</view>
-          <view class="list-list-content">
-            <navigator class="list-item">数学</navigator>
-            <navigator class="list-item">物理学</navigator>
-            <navigator class="list-item">化学</navigator>
-            <navigator class="list-item">力学</navigator>
-            <navigator class="list-item">地理学</navigator>
+            <block wx:for="{{i.third}}" wx:for-item="j">
+              <navigator url="{{'../query/query?' + j}}" class="list-item">{{j}}</navigator>
+            </block>
           </view>
         </view>
       </view>
