@@ -27,13 +27,13 @@
     <view class="main-show">
       <view class="main-show-title">图书推荐</view>
       <view class="list">
-        <view wx:for="{{rec_lists}}" class="list-item">
+        <view wx:for="{{book}}" class="list-item">
           <image src="{{item.img_src}}"></image>
           <view class="book-info">
             <view class="book-title">{{item.book_title}}</view>
             <view class="book-author">{{item.book_author}}</view>
             <view class="book-category"><text>分类：</text>{{item.book_category}}</view>
-            <navigator url="../detail/detail" class="book-detail">详细</navigator>
+            <navigator url="{{'../detail/detail?' + item.id}}" class="book-detail">详细</navigator>
           </view>
         </view>
       </view>
