@@ -1,7 +1,7 @@
 <!--navigation.wxml-->
 <view class="container">
   <view class="search">
-    <input type="text" placeholder="搜索图书" placeholder-class="search-placeholder" confirm-type="search" />
+    <input type="text" placeholder="搜索图书" placeholder-class="search-placeholder" bindfocus="focusTap" confirm-type="search" />
   </view>
   <view class="main">
     <view class="list" wx:for="{{primary}}">

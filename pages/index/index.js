@@ -80,6 +80,8 @@ Page({
       if (queue.indexOf(value) == -1) {
         queue.push(value);
       }    
+    } else {
+      return;
     }
 
     if (!this.data.search_data.isHos) {
@@ -89,6 +91,10 @@ Page({
     this.setData({
       search_history: queue,
       search_data: this.data.search_data,
+    });
+
+    wx.navigateTo({
+      url: '../query/query?query_name=' + value
     });
   },
   clearTap: function() {
