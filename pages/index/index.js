@@ -72,14 +72,36 @@ Page({
       }
     });
   },
-  searchTap: function() {
-    
+  searchTap: function(e) {
+    var queue = this.data.search_history;
+    var value = e.detail.value.trim();
+
+    if (value != '') {
+      if (queue.indexOf(value) == -1) {
+        queue.push(value);
+      }    
+    } else {
+      return;
+    }
+
+    if (!this.data.search_data.isHos) {
+      this.data.search_data.isHos = true;
+    }
+
+    this.setData({
+      search_history: queue,
+      search_data: this.data.search_data,
+    });
+
+    wx.navigateTo({
+      url: '../query/query?query_name=' + value
+    });
   },
   clearTap: function() {
     this.data.search_data.isHos = false;
     this.setData({
       search_data: this.data.search_data,
-      search_hository: []
+      search_history: []
     });
   }
 

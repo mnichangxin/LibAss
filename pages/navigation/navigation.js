@@ -53,9 +53,15 @@ Page({
     ]
   },
 
-  // 事件监听
+  // 事件处理函数
   onLoad: function (options) {
   
+  },
+
+  focusTap: function() {
+    wx.switchTab({
+      url: '../index/index'
+    })
   }
 
 });
