@@ -8,19 +8,20 @@ Page({
 
   // 事件处理函数
   onLoad: function (options) {
-    // 检查登录态是否过期
-    wx.checkSession({
-      success: function (res) {
-        console.log(res);
-      },
-      fail: function () {
-        wx.login({
-          success: function (res) {
-            console.log(res.code);
-          }
-        })
-      }
-    });
+    // wx.request({
+    //   url: 'https://85293008.qcloud.la/weiapp/login',
+    //   data: {
+    //     name: 'xiaoli',
+    //     age: 20
+    //   },
+    //   method: 'POST',
+    //   header: {
+    //     'content-type': 'application/x-www-form-urlencoded'
+    //   },
+    //   success: function(res) {
+    //     console.log(res.data)
+    //   }
+    // })
   }
 
 })

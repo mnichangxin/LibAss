@@ -4,10 +4,10 @@
     <input type="text" placeholder="搜索图书" placeholder-class="search-placeholder" bindfocus="focusTap" confirm-type="search" />
   </view>
   <view class="main">
-    <view class="list" wx:for="{{primary}}">
+    <view class="list" wx:for="{{primary}}" wx:key="i">
       <view class="list-title">{{item.title}}</view>
       <view class="list-content">
-        <view class="list-list" wx:for="{{item.second}}" wx:for-item="i">
+        <view class="list-list" wx:for="{{item.second}}" wx:for-item="i" wx:key="j">
           <view class="list-list-title">{{i.title}}</view>
           <view class="list-list-content">
             <block wx:for="{{i.third}}" wx:for-item="j">
