@@ -13,31 +13,16 @@ App({
             code: res.code
           },
           success: function(res) {
-            console.log(res);
+            for (var k in res.data) {
+              wx.setStorage({
+                key: k,
+                data: res.data[k],
+              });
+            }
+            console.log(res.data);
           }
         });
       }
     });
   }
-  // getUserInfo:function(cb){
-  //   var that = this
-  //   if (this.globalData.userInfo) {
-  //     typeof cb == "function" && cb(this.globalData.userInfo)
-  //   } else{
-  //     //调用登录接口
-  //     wx.login({
-  //       success: function () {
-  //         wx.getUserInfo({
-  //           success: function (res) {
-  //             that.globalData.userInfo = res.userInfo
-  //             typeof cb == "function" && cb(that.globalData.userInfo)
-  //           }
-  //         })
-  //       }
-  //     })
-  //   }
-  // },
-  // globalData:{
-  //   userInfo: null
-  // }
 });
