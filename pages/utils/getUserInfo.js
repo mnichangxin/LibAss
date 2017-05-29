@@ -4,7 +4,7 @@ function getUserInfo() {
   wx.getUserInfo({
     success: function(res) {
       var userInfo = res.userInfo;
-
+      
       return {
         nickName: userInfo.nickName, // 用户名
         avatarUrl: userInfo.avatarUrl, // 头像
@@ -13,11 +13,8 @@ function getUserInfo() {
         city: userInfo.city, // 国家
         country: userInfo.country // 国家
       }
-    },
-    fail: function() {
-      return false;
     }
   });
 }
 
-module.exports.getUserInfo = getUserInfo();
+module.exports.getUserInfo = getUserInfo;
