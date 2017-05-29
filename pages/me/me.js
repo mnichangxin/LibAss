@@ -1,5 +1,5 @@
 // me.js
-var common = require('../utils/login.js');
+var isLogin = require('../utils/isLogin.js');
 
 Page({
 
@@ -10,7 +10,7 @@ Page({
 
   // 事件处理函数
   onLoad: function (options) {
-    // common.login();
+    // 判断是否登录
+    isLogin.isLogin();
   }
-
 })

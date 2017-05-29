@@ -7,21 +7,28 @@ function isLogin() {
       wx.getStorage({
         key: 'token',
         success: function(res) {
-          // 带token请求服务端，判断是否登录
+          // 发送token请求服务端，判断是否登录
           wx.request({
-            url: '',
+            url: 'https://85293008.qcloud.la/wxapp/soft/login_check.action', // 验证登录地址
             data: {
-              token: ''
+              token: res.data
             },
             success: function(res) {
-              console.log('登录成功');
-              return true;
+              if (res.data.code == 0) {
+                console.log('登录成功');
+                console.log(res);
+                return true;
+              } else {
+                console.log('登录失败，session不一致');
+                console.log(res);
+                return false;
+              }
             },
             fail: function() {
               console.log('发送请求到服务端失败');
               return false;
             }
-          })
+          });
         },
         fail: function() {
           console.log('缓存中无数据，登录失败');
