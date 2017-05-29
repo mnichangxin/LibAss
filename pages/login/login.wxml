@@ -14,10 +14,11 @@
       <button formType="submit">登录</button>
     </view>
     <view class="tip" id="tip"></view>
-    <view class="login-weixin">
-      <image src="../static/icon/weixin.png" bindtap="loginTap"></image>
-      <navigator class="reg-btn" bindtap="toReg">立即注册</navigator>
+    <view class="login-weixin" bindtap="loginTap">
+      <image src="../static/icon/weixin.png"></image>
+      <text>一键登录，方便快捷</text>
     </view>
+    <navigator class="reg-btn" hover-class="none" bindtap="toReg">没有账号？立即注册</navigator>
   </view>
   <view class="reg" wx:else>
     <view class="section">

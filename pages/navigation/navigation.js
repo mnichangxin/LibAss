@@ -1,6 +1,7 @@
 // navigation.js
-Page({
+var token = require('../utils/getToken.js');
 
+Page({
   // 页面初始数据
   data: {
     primary: [
@@ -55,7 +56,12 @@ Page({
 
   // 事件处理函数
   onLoad: function (options) {
-  
+    wx.request({
+      url: 'https://85293008.qcloud.la/wxapp/soft/Linkage_list.action',
+      data: {
+
+      }
+    })
   },
 
   focusTap: function() {

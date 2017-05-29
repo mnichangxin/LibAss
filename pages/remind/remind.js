@@ -1,31 +1,46 @@
 // remind.js
-Page({
+var isLogin = require('../utils/isLogin.js');
+var getToken = require('../utils/getToken.js');
 
+Page({
   // 页面初始数据
   data: {
     book: {
-      id: '',
-      book_title: '百年孤独',
-      holding: 0
+      // id: '',
+      // book_title: '百年孤独',
+      // holding: 0
     }
   },
 
   // 事件处理函数
   onLoad: function (options) {
-    this.data.book.id = options.id;
     this.setData({
-      book: this.data.book
+      book: {
+        bookId: options.bookId,
+        bookTitle: options.bookTitle,
+        bookHolding: options.bookHolding
+      }
     });
   },
   
   subscribeTap: function() {
-    // 调用支付接口
-    wx.requestPayment({
-      timeStamp: '',
-      nonceStr: '',
-      package: '',
-      signType: '',
-      paySign: '',
+    var that = this;
+
+    isLogin.isLogin(function () {
+      wx.request({
+        url: 'https://85293008.qcloud.la/wxapp/soft/Reserve_order.action',
+        data: {
+          token: getToken.getToken(),
+          bookId: that.data.book.bookId,
+        },
+        success: function (res) {
+          console.log(res);
+        }
+      });
+    }, function () {
+      wx.redirectTo({
+        url: '../login/login'
+      })
     });
   }
 })

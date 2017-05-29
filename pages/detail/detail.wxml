@@ -1,44 +1,44 @@
 <!--detail.wxml-->
 <view class="container">
   <view class="nav-top">
-    <image src="{{book.img_src}}" mode="aspectFit"></image>
+    <image src="{{book.imgSrc}}" mode="aspectFit"></image>
     <view class="book">
-      <text class="book-title">{{book.book_title}}</text>
-      <text class="book-author">{{book.book_author}}</text>
-      <text class="book-category">{{book.book_category}}</text>
+      <text class="book-title">{{book.bookTitle}}</text>
+      <text class="book-author">{{book.bookAuthor}}</text>
+      <text class="book-category">{{book.bookCategory}}</text>
     </view>
   </view>
   <view class="main">
     <view class="main-list book-info">
-      <text class="book-publish">{{book.book_publish}}</text>
-      <text class="book-holding">馆藏<text class="book-holding-num">{{book.book_holding}}</text>本</text>
+      <text class="book-publish">{{book.bookPublish}}</text>
+      <text class="book-holding">馆藏<text class="book-holding-num">{{book.bookHolding}}</text>本</text>
     </view>
     <view class="main-list">
-      <navigator url="{{'../reverse/reverse?id=' + book.id}}" hover-class="none" class="reverse" wx:if="{{book.book_holding > 0}}">在线预订</navigator>
-      <navigator url="{{'../remind/remind?id=' + book.id}}" hover-class="none" class="reverse" wx:else>有书提醒</navigator>
+      <navigator url="{{'../reverse/reverse?bookId=' + book.bookId + '&bookTitle=' + book.bookTitle + '&bookHolding=' + book.bookHolding}}" hover-class="none" class="reverse" wx:if="{{book.bookHolding > 0}}">在线预订</navigator>
+      <navigator url="{{'../remind/remind?bookId=' + book.bookId + '&bookTitle=' + book.bookTitle + '&bookHolding=' + book.bookHolding}}" hover-class="none" class="reverse" wx:else>有书提醒</navigator>
     </view>
     <view class="main-list">
       <view class="list-title">内容简介</view>
       <view class="list-content">
-        {{book.book_detail.introduction}}
+        {{book.bookDetail.introduction}}
       </view>
     </view>
     <view class="main-list">
       <view class="list-title">目录</view>
       <view class="list-content">
-        {{book.book_detail.catalog}}
+        {{book.bookDetail.catalog}}
       </view>
     </view>
     <view class="main-list">
       <view class="list-title">导读</view>
       <view class="list-content">
-        {{book.book_detail.guidance}}
+        {{book.bookDetail.guidance}}
       </view>
     </view>
     <view class="main-list">
       <view class="list-title">书评</view>
       <view class="list-content">
-        {{book.book_detail.review}}
+        {{book.bookDetail.review}}
       </view>
     </view>
   </view>
