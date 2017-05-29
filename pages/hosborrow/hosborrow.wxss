@@ -1,1 +1,22 @@
 /* hosborrow.wxss */
+
+.container {
+  padding: 20rpx;
+}
+.item {
+  width: 90%;
+  margin-top: 20rpx;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  background: #fff;
+}
+.book-id, .book-title, .borrow-date {
+  margin-top: 10rpx;
+  font-size: 12pt;
+  text-align: center;
+}
+.item text {
+  margin-left: 10rpx;
+  font-style: italic;
+}
+
