@@ -1,5 +1,5 @@
 /* 判断是否登录 */
-function isLogin(callback) {
+function isLogin(callback, error) {
   // 检查登录态
   wx.checkSession({
     success: function() {

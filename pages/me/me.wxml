@@ -22,7 +22,7 @@
         <view class="user-name">
           <text>{{user_info.nick_name}}</text>
         </view>
-        <view class="exit-btn">
+        <view class="exit-btn" bindtap="exitLogin">
           <text>退出登录</text>
           <image src="../static/icon/login.png"></image>
         </view>
