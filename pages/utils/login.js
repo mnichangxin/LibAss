@@ -1,5 +1,5 @@
 /* 登录组件 */
-function login() {
+function login(callback, error) {
   wx.login({
     success: function (res) {
       wx.request({
@@ -7,12 +7,13 @@ function login() {
         data: {
           code: res.code
         },
-        success: function (res) {
+        success: function(res) {
           wx.setStorage({
             key: 'token',
             data: res.data.token
           });
           console.log('登陆成功，token为：' + res.data.token);
+          callback(); // 执行登录成功的回调
         },
         fail: function() {
           console.log('登录失败');

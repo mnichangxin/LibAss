@@ -27,7 +27,17 @@ Page({
 
   // 调取微信登录
   loginTap: function() {
-    login.login();
+    login.login(function() {
+      wx.reLaunch({
+        url: './redirect',
+        success: function() {
+          console.log('跳转成功');
+        },
+        fail: function() {
+          console.log('跳转失败');
+        }
+      });
+    });
   }
 
 });
