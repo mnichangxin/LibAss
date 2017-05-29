@@ -15,7 +15,7 @@
     </view>
     <view class="tip" id="tip"></view>
     <view class="login-weixin">
-      <image src="../static/icon/weixin.png"></image>
+      <image src="../static/icon/weixin.png" bindlongtap="loginTap"></image>
       <navigator class="reg-btn" bindtap="toReg">立即注册</navigator>
     </view>
   </view>
