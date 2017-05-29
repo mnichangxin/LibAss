@@ -1,6 +1,8 @@
 /* login.js */
 var login = require('../utils/login.js');
 
+var appInstance = getApp(); // 获取App实例
+
 Page({
 
   // 页面的初始数据
@@ -10,7 +12,7 @@ Page({
 
   // 事件处理函数
   onLoad: function() {
- 
+
   },
 
   // 渲染哪个模板
@@ -27,16 +29,27 @@ Page({
 
   // 调取微信登录
   loginTap: function() {
-    login.login(function() {
-      wx.reLaunch({
-        url: './redirect',
-        success: function() {
-          console.log('跳转成功');
-        },
-        fail: function() {
-          console.log('跳转失败');
-        }
-      });
+    // login.login(function() {
+    //   wx.reLaunch({
+    //     url: './redirect',
+    //     success: function() {
+    //       console.log('跳转成功');
+    //     },
+    //     fail: function() {
+    //       console.log('跳转失败');
+    //     }
+    //   });
+    // });
+    appInstance.globalData.redirect = true;
+
+    wx.switchTab({
+      url: '../me/me',
+      success: function() {
+        console.log('跳转成功');
+      },
+      fail: function() {
+        console.log('跳转失败');
+      }
     });
   }
 

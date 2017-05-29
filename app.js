@@ -3,7 +3,7 @@
 App({
   // 程序数据初始化参数
   globalData: {
-    data: 'none'
+    redirect: false 
   },
 
   // 程序初始化事件处理函数
