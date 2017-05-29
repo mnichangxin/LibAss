@@ -1,1 +1,5 @@
-{}
+{
+  "navigationBarTitleText": "当前借阅",
+  "navigationBarBackgroundColor": "white",
+  "navigationBarTextStyle": "black"
+}

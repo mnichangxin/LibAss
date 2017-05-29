@@ -3,21 +3,19 @@ function login() {
   wx.login({
     success: function (res) {
       wx.request({
-        url: 'https://85293008.qcloud.la/weiapp/login',
+        url: 'https://85293008.qcloud.la/wxapp/soft/loginWeChatCheck.action',
         data: {
           code: res.code
         },
         success: function (res) {
-          wx.clearStorage(); // 清空本地缓存
-          for (var k in res.data) {
-            wx.setStorage({
-              key: k,
-              data: res.data[k],
-            });
-          }
-          console.log(res.data);
+          wx.setStorage({
+            key: 'token',
+            data: res.data.token
+          });
+          console.log('token:' + res.data.token);
         }
       });
+      console.log('code:' + res.code);
     }
   });
 }

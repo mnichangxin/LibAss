@@ -43,25 +43,25 @@ Page({
 
   // 页面加载
   onLoad: function () {
-    if (module1.isLogin()) {
-      wx.request({
-        url: '',
-        data: {
-          data: {
-            token: '',
-            page: 1,
-            pageSize: 5
-          }
-        }
-      });
-    } else {
-      wx.request({
-        url: '',
-        data: {
+    // if (module1.isLogin()) {
+    //   wx.request({
+    //     url: '',
+    //     data: {
+    //       data: {
+    //         token: '',
+    //         page: 1,
+    //         pageSize: 5
+    //       }
+    //     }
+    //   });
+    // } else {
+    //   wx.request({
+    //     url: '',
+    //     data: {
           
-        }
-      });
-    }
+    //     }
+    //   });
+    // }
   },
 
   // 扫码

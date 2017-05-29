@@ -1,2 +1,12 @@
 <!--myreverse.wxml-->
-<text>myreverse.wxml</text>
+<view class="container">
+  <block wx:if="{{condition}}">
+    <view class="item" wx:for="{{myreverse}}" wx:key="i">
+      <view class="book-id">图书ID：<text>{{item.id}}</text></view>
+      <view class="book-title">书名：<text>{{item.book_title}}</text></view>
+      <view class="borrow-date">借阅时间：<text>{{item.reverse_date}}</text></view>
+      <view class="get-date">请于{{item.get_date}}前取书，过期无效，预订不可取消</view>
+    </view>
+  </block>
+  <view wx:else>暂无记录</view>
+</view>
