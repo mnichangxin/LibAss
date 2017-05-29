@@ -10,7 +10,7 @@ Page({
 
   // 事件处理函数
   onLoad: function (options) {
-    common.login();
+    // common.login();
   }
 
 })

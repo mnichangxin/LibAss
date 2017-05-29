@@ -1,2 +1,8 @@
 <!--hosborrow.wxml-->
-<text>hosborrow.wxml</text>
+<view class="container">
+  <view class="item" wx:for="{{hosborrow}}" wx:key="i">
+    <view class="book-id">图书ID：<text>{{item.id}}</text></view>
+    <view class="book-title">书名：<text>{{item.book_title}}</text></view>
+    <view class="borrow-date">借阅时间：<text>{{item.borrow_date}}</text></view>
+  </view>
+</view>
