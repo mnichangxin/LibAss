@@ -21,28 +21,28 @@
   </view>
   <view class="main">
     <view class="menu">
-      <view class="menu-list">
+      <navigator class="menu-list">
         <image src="../static/icon/history.png" class="list-icon"></image>
         <text>借阅历史</text>
         <image src="../static/icon/arrow.png" class="list-arrow"></image>
-      </view>
-      <view class="menu-list">
+      </navigator>
+      <navigator class="menu-list">
         <image src="../static/icon/current.png" class="list-icon"></image>
         <text>当前借阅</text>
         <image src="../static/icon/arrow.png" class="list-arrow"></image>
-      </view>
-      <view class="menu-list">
+      </navigator>
+      <navigator class="menu-list">
         <image src="../static/icon/menu_reverse.png" class="list-icon"></image>
         <text>我的预订</text>
         <image src="../static/icon/arrow.png" class="list-arrow"></image>
-      </view>
+      </navigator>
     </view>
-    <view class="menu menu-set">
+    <!--<view class="menu menu-set">
       <view class="menu-list">
         <image src="../static/icon/set.png" class="list-icon"></image>
         <text>设置</text>
         <image src="../static/icon/arrow.png" class="list-arrow"></image>
       </view>
-    </view>
+    </view>-->
   </view>
 </view>
