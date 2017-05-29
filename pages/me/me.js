@@ -17,9 +17,7 @@ Page({
     var that = this;
 
     // 根据是否登录渲染不同的数据
-    if (isLogin.isLogin()) {
-      console.log('Hello')
-      // 请求用户信息
+    isLogin.isLogin(function () { // 请求用户信息，成功的回调
       wx.getUserInfo({
         success: function (res) {
           that.setData({
@@ -31,7 +29,31 @@ Page({
           });
         }
       });
-    }
+    });
+  },
+
+  exitLogin: function() {
+    var that = this;
+
+    wx.request({
+      url: 'https://85293008.qcloud.la/wxapp/soft/login_exit.action',
+      data: {
+        token: wx.getStorageSync('token')
+      },
+      success: function(res) {
+        wx.setStorage({
+          key: 'token',
+          data: res.data.token
+        });
+        that.setData({
+          condition: false
+        });
+        console.log('退出登录成功');
+      },
+      fail: function() {
+        console.log('退出登录失败');
+      }
+    });
   }
 
 });
