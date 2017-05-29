@@ -1,4 +1,6 @@
 /* index.js */
+var module1 = require('../utils/isLogin.js');
+var module2 = require('../utils/login.js');
 
 Page({
 
@@ -41,14 +43,33 @@ Page({
 
   // 页面加载
   onLoad: function () {
-    
+    if (module1.isLogin()) {
+      wx.request({
+        url: '',
+        data: {
+          data: {
+            token: '',
+            page: 1,
+            pageSize: 5
+          }
+        }
+      });
+    } else {
+      wx.request({
+        url: '',
+        data: {
+          
+        }
+      });
+    }
   },
 
   // 扫码
   scanTap: function () {
     wx.scanCode({
-      success: function () {
-        onlyFromCamera: true
+      onlyFromCamera: true,
+      success: function (res) {
+        
       }
     });
   },

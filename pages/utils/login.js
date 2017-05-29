@@ -8,6 +8,7 @@ function login() {
           code: res.code
         },
         success: function (res) {
+          wx.clearStorage(); // 清空本地缓存
           for (var k in res.data) {
             wx.setStorage({
               key: k,

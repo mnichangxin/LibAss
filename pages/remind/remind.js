@@ -6,7 +6,7 @@ Page({
     book: {
       id: '',
       book_title: '百年孤独',
-      holding: 10
+      holding: 0
     }
   },
 
@@ -19,6 +19,13 @@ Page({
   },
   
   subscribeTap: function() {
-
+    // 调用支付接口
+    wx.requestPayment({
+      timeStamp: '',
+      nonceStr: '',
+      package: '',
+      signType: '',
+      paySign: '',
+    });
   }
 })
