@@ -1,36 +1,16 @@
 /* index.js */
-var module1 = require('../utils/isLogin.js');
-var module2 = require('../utils/login.js');
+// var isLogin = require('../utils/isLogin.js');
+// var login = require('../utils/login.js');
+var getToken = require('../utils/getToken.js')
 
 Page({
-
   // 初始化数据
   data: {
     book: [
-      // {
-      //   id: '0001', // 唯一ID
-      //   img_src: '../static/images/book1.jpg', // 图片路径
-      //   book_title: '百年孤独', // 图书名称
-      //   book_author: '[哥伦比亚] 加西亚·马尔克斯', // 图书作者
-      //   book_category: '小说/名著' // 图书分类
-      // },
-      // {
-      //   id: '0002', 
-      //   img_src: '../static/images/book1.jpg',
-      //   book_title: '百年孤独', 
-      //   book_author: '[哥伦比亚] 加西亚·马尔克斯', 
-      //   book_category: '小说/名著'
-      // },
-      // {
-      //   id: '0003',
-      //   img_src: '../static/images/book1.jpg',
-      //   book_title: '百年孤独', 
-      //   book_author: '[哥伦比亚] 加西亚·马尔克斯', 
-      //   book_category: '小说/名著'
-      // }
+
     ],
-    search_history: [
-      '百年孤独', '白夜行', '摆渡人'
+    searchHistory: [
+      
     ],
     search_data: {
       condition: false,
@@ -48,7 +28,7 @@ Page({
     wx.request({
       url: 'https://85293008.qcloud.la/wxapp/soft/RecommendBooks.action',
       data: {
-        token: '',
+        token: getToken.getToken(),
         page: 1,
         pageSize: 5
       },
@@ -58,26 +38,7 @@ Page({
           book: res.data
         });
       }
-    })
-    // if (module1.isLogin()) {
-    //   wx.request({
-    //     url: '',
-    //     data: {
-    //       data: {
-    //         token: '',
-    //         page: 1,
-    //         pageSize: 5
-    //       }
-    //     }
-    //   });
-    // } else {
-    //   wx.request({
-    //     url: '',
-    //     data: {
-          
-    //     }
-    //   });
-    // }
+    });
   },
 
   // 扫码
@@ -92,6 +53,8 @@ Page({
 
   // 搜索框事件
   focusTap: function() {
+    var that = this;
+
     this.data.search_data.condition = true;
     this.setData({
       search_data: this.data.search_data,
@@ -99,6 +62,18 @@ Page({
         border_raduis: '0'
       }
     });
+
+    wx.request({
+      url: 'https://85293008.qcloud.la/wxapp/soft/Historical_request.action',
+      data: {
+        token: getToken.getToken
+      },
+      success: function(res) {
+        that.setData({
+          searchHistory: res.data
+        });
+      }
+    })
   },
   blurTap: function() {
     this.data.search_data.condition = false;
@@ -113,9 +88,24 @@ Page({
     var queue = this.data.search_history;
     var value = e.detail.value.trim();
 
+    // var that = this;
+
     if (value != '') {
       if (queue.indexOf(value) == -1) {
         queue.push(value);
+
+        // wx.request({
+        //   url: 'https://85293008.qcloud.la/wxapp/soft/FindBooks_books.action',
+        //   data: {
+        //     token: getToken.getToken(),
+        //     bookName: value,
+        //     page: 1,
+        //     pageSize: 5
+        //   },
+        //   success: function(res) {
+            
+        //   }
+        // });
       }    
     } else {
       return;
@@ -131,15 +121,44 @@ Page({
     });
 
     wx.navigateTo({
-      url: '../query/query?query_name=' + value
+      url: '../query/query?query_name=' + value,
+      success: function() {
+        console.log('success');
+      },
+      fail: function() {
+        console.log('fail');
+      }
     });
   },
   clearTap: function() {
+    var that = this;
+
     this.data.search_data.isHos = false;
     this.setData({
-      search_data: this.data.search_data,
-      search_history: []
+      search_data: this.data.search_data
     });
-  }
+
+    wx.request({
+      url: 'https://85293008.qcloud.la/wxapp/soft/Historical_delete.action',
+      data: {
+        token: getToken.getToken()
+      },
+      success: function(res) {
+        that.setData({
+          searchHistory: []
+        });
+      } 
+    })
+  },
+
+  // 上拉加载
+  // onReachBottom: function() {
+  //   wx.request({
+  //     url: 'https://85293008.qcloud.la/wxapp/soft/RecommendBooks.action',
+  //     data: {
+
+  //     }
+  //   })
+  // }
 
 });

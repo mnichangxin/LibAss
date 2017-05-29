@@ -44,7 +44,8 @@
 /* login */
 .login-weixin {
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
+  justify-content: center;
   align-items: center;
   margin-top: 40rpx;
   padding: 0 20rpx;
@@ -52,12 +53,19 @@
   width: 100%;
 }
 .login-weixin image {
-  width: 60rpx;
-  height: 60rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+.login-weixin text {
+  margin-left: 30rpx;
+  font-size: 13pt;
+  color: #09BB07;
 }
 .reg-btn {
-  font-size: 12pt;
-  color: #09BB07;
+  margin-top: 40rpx;
+  text-align: right;
+  font-size: 11pt;
+  color: #888888;
 }
 
 /* reg */

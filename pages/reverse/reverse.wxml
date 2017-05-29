@@ -1,8 +1,8 @@
 <!--reserve.wxml-->
 <view class="container">
   <view class="reverse-book">
-    <text>预约的图书：<text class="book-name">{{book.book_title}}</text></text>
-    <text>馆藏：<text class="holding-num">{{book.book_holding}}</text></text>
+    <text>预约的图书：<text class="book-name">{{book.bookTitle}}</text></text>
+    <text>馆藏：<text class="holding-num">{{book.bookHolding}}</text></text>
   </view>
   <view class="section">
     <view class="section-title">请选择预约时间：</view>

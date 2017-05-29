@@ -1,8 +1,8 @@
 <!--remind.wxml-->
 <view class="container">
   <view class="reverse-book">
-    <text>当前图书：<text class="book-name">{{book.book_title}}</text></text>
-    <text>馆藏：<text class="holding-num">{{book.holding}}</text></text>
+    <text>当前图书：<text class="book-name">{{book.bookTitle}}</text></text>
+    <text>馆藏：<text class="holding-num">{{book.bookHolding}}</text></text>
   </view>
   <view class="section">
     <view class="tip">当书有归还时会提醒用户</view>

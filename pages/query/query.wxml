@@ -1,15 +1,15 @@
 <!--query.wxml-->
 <view class="container">
   <view class="section">
-      <view class="section-title">{{query_name}}</view>
+      <view class="section-title">{{thirdName}}</view>
       <view class="list">
-        <view class="list-item" wx:for="{{book}}">
-          <image src="{{item.img_src}}"></image>
+        <view class="list-item" wx:for="{{book}}" wx:key="i">
+          <image src="{{item.imgSrc}}"></image>
           <view class="book-info">
-            <view class="book-title">{{item.book_title}}</view>
-            <view class="book-author">{{item.book_author}}</view>
-            <view class="book-category"><text>分类：</text>{{item.book_category}}</view>
-            <navigator url="{{'../detail/detail?id=' + item.id}}" class="book-detail" hover-class="none">详细</navigator>
+            <view class="book-title">{{item.bookTitle}}</view>
+            <view class="book-author">{{item.bookAuthor}}</view>
+            <view class="book-category"><text>分类：</text>{{item.bookCategory}}</view>
+            <navigator url="{{'../detail/detail?id=' + item.bookId}}" class="book-detail" hover-class="none">详细</navigator>
           </view>
         </view>
       </view>
