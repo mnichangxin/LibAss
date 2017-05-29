@@ -1,5 +1,5 @@
 /* 判断是否登录 */
-function isLogin() {
+function isLogin(callback) {
   // 检查登录态
   wx.checkSession({
     success: function() {
@@ -17,28 +17,24 @@ function isLogin() {
               if (res.data.code == 0) {
                 console.log('登录成功');
                 console.log(res);
-                return true;
+                callback(); // 执行回调函数
               } else {
                 console.log('登录失败，session不一致');
                 console.log(res);
-                return false;
               }
             },
             fail: function() {
               console.log('发送请求到服务端失败');
-              return false;
             }
           });
         },
         fail: function() {
           console.log('缓存中无数据，登录失败');
-          return false;
         }
       })
     },
     fail: function() {
       console.log('需要重新拉取登录态');
-      return false;
     }
   });
 }

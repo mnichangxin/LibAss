@@ -34,12 +34,12 @@
       <view class="main-show-title">图书推荐</view>
       <view class="list">
         <view wx:for="{{book}}" wx:key="i" class="list-item">
-          <image src="{{item.img_src}}"></image>
+          <image src="{{item.imgSrc}}"></image>
           <view class="book-info">
-            <view class="book-title">{{item.book_title}}</view>
-            <view class="book-author">{{item.book_author}}</view>
-            <view class="book-category"><text>分类：</text>{{item.book_category}}</view>
-            <navigator url="{{'../detail/detail?id=' + item.id}}" class="book-detail">详细</navigator>
+            <view class="book-title">{{item.bookTitle}}</view>
+            <view class="book-author">{{item.bookAuthor}}</view>
+            <view class="book-category"><text>分类：</text>{{item.bookCategory}}</view>
+            <navigator url="{{'../detail/detail?id=' + item.bookId}}" class="book-detail">详细</navigator>
           </view>
         </view>
       </view>
