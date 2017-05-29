@@ -36,15 +36,17 @@ Page({
   },
 
   onShow: function() {
+    var that = this;
+
     if (appInstance.globalData.redirect) {
       login.login(function() {
-
-      });
-      
-      appInstance.globalData.redirect = false;
-      
-      this.setData({
-        condition: true
+        that.setData({
+          condition: true
+        });
+      }, function() {
+           
+      }, function() {
+        appInstance.globalData.redirect = false;
       });
     }
   },
