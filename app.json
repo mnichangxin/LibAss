@@ -8,7 +8,10 @@
     "pages/detail/detail",
     "pages/login/login",
     "pages/remind/remind",
-    "pages/query/query"
+    "pages/query/query",
+    "/pages/curborrow/curborrow",
+    "/pages/hosborrow/hosborrow",
+    "/pages/myreverse/myreverse"
   ],
   "window": {
     "backgroundTextStyle": "light",
