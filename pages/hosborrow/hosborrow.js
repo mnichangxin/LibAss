@@ -20,11 +20,16 @@ Page({
         book_title: '百年孤独', // 图书名称
         borrow_date: '2017-05-01' // 借阅时间
       }
-    ]
+    ],
+    condition: true
   },
 
   // 事件处理函数
   onLoad: function (options) {
-  
+    if (this.data.hosborrow.length == 0) {
+      this.setData({
+        condition: false
+      });
+    }
   }
 })

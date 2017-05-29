@@ -9,6 +9,7 @@
   padding: 10rpx;
   border-radius: 10rpx;
   background: #fff;
+  text-align: center;
 }
 .book-id, .book-title, .borrow-date {
   margin-top: 10rpx;
