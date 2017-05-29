@@ -1,5 +1,8 @@
 // me.js
 var isLogin = require('../utils/isLogin.js');
+var login = require('../utils/login.js');
+
+var appInstance = getApp(); // 获取App实例
 
 Page({
 
@@ -30,6 +33,20 @@ Page({
         }
       });
     });
+  },
+
+  onShow: function() {
+    if (appInstance.globalData.redirect) {
+      login.login(function() {
+
+      });
+      
+      appInstance.globalData.redirect = false;
+      
+      this.setData({
+        condition: true
+      });
+    }
   },
 
   exitLogin: function() {
