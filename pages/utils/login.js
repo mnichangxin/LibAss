@@ -3,7 +3,7 @@ function login() {
   wx.login({
     success: function (res) {
       wx.request({
-        url: 'https://85293008.qcloud.la/wxapp/soft/loginWeChatCheck.action', // 请求登录的地址
+        url: 'https://85293008.qcloud.la/wxapp/soft/login_weChatCheck.action', // 请求登录的地址
         data: {
           code: res.code
         },
