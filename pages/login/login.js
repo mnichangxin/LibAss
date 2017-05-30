@@ -3,6 +3,16 @@ var login = require('../utils/login.js');
 
 var appInstance = getApp(); // 获取App实例
 
+var login_data = {
+  username: '',
+  password: ''
+},
+reg_data = {
+  username: '',
+  password: '',
+  confirm: ''
+};
+
 Page({
   // 页面的初始数据
   data: {
@@ -29,7 +39,68 @@ Page({
   },
 
   // 表单相关事件
-  
+  loginUsernameHandler: function(e) {
+    login_data.username = e.detail.value;
+  },
+  loginPasswordHandler: function(e) {
+    login_data.password = e.detail.value;
+  },
+  regUsernameHandler: function(e) {
+    reg_data.username = e.detail.value;
+  },
+  regPasswordHandler: function(e) {
+    reg_data.password = e.detail.value;
+  },
+  regConfirmHandler: function(e) {
+    reg_data.confirm = e.detail.value;
+  }, 
+
+  // 登录注册验证
+  loginSubmit: function() {
+    var username = login_data.username,
+        password = login_data.password;
+    
+    if (username == '' || password == '') {
+      console.log('用户名或密码为空');
+      return;
+    }
+    if (!/^1[3|4|5|8][0-9]\d{4,8}$/.test(username)) {
+      console.log('手机号格式有误');
+      return;
+    }
+    if (password.length < 6) {
+      console.log('密码至少6位');
+      return;
+    }
+
+    console.log('登录成功！');
+    
+  },
+  regSubmit: function() {
+    var username = reg_data.username,
+        password = reg_data.password,
+         confirm = reg_data.confirm;
+    
+    if (username == '' || password == '') {
+      console.log('用户名或密码为空');
+      return;
+    }
+    if (!/^1[3|4|5|8][0-9]\d{4,8}$/.test(username)) {
+      console.log('手机号格式有误');
+      return;
+    }
+    if (password.length < 6) {
+      console.log('密码至少6位');
+      return;
+    }
+    if (confirm != password) {
+      console.log('两次密码不一致');
+      return;
+    }
+
+    console.log('注册成功！');
+
+  },
 
   // 调取微信登录
   loginTap: function() {
