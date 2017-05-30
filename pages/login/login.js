@@ -22,6 +22,20 @@ var showTip = function(title) {
   });
 };
 
+var redirect = function () {
+  appInstance.globalData.redirect = true;
+
+  wx.switchTab({
+    url: '../me/me',
+    success: function () {
+      console.log('跳转成功');
+    },
+    fail: function () {
+      console.log('跳转失败');
+    }
+  });
+};
+
 Page({
   // 页面的初始数据
   data: {
@@ -95,6 +109,7 @@ Page({
             data: res.data.token
           });
           showTip('登录成功');
+          redirect();
         } else {
           showTip('登录失败，请检查用户名或密码是否正确');
         }
@@ -140,6 +155,7 @@ Page({
             success: function (res) {
               if (res.data.code == 0 ) {
                 showTip('注册成功');
+                redirect();
               } else {
                 showTip(res.data.message);
               }
@@ -173,17 +189,7 @@ Page({
           success: function (res) {
             // token返回空说明未注册，跳转到注册页面；不为空直接登录
             if (res.data.token != null) {
-                appInstance.globalData.redirect = true;
-
-                wx.switchTab({
-                  url: '../me/me',
-                  success: function () {
-                    console.log('跳转成功');
-                  },
-                  fail: function () {
-                    console.log('跳转失败');
-                  }
-                });
+              redirect();
             } else {
               that.setData({
                 condition: false,
@@ -202,4 +208,5 @@ Page({
       }
     });
   }
+
 });
