@@ -82,7 +82,27 @@ Page({
       return;
     }
 
-    showTip('登录成功');
+    wx.request({
+      url: 'https://85293008.qcloud.la/wxapp/soft/login_phone.action',
+      data: {
+        phone: login_data.username,
+        password: login_data.password
+      },
+      success: function(res) {
+        if (res.data.token != null) {
+          wx.setStorage({
+            key: 'token',
+            data: res.data.token
+          });
+          showTip('登录成功');
+        } else {
+          showTip('登录失败，请检查用户名或密码是否正确');
+        }
+      },
+      fail: function() {
+        showTip('请求超时');
+      }
+    });
     
   },
   regSubmit: function() {
@@ -106,6 +126,34 @@ Page({
       showTip('两次密码不一致');
       return;
     }
+
+    wx.login({
+      success: function (res) {
+        if (res.code) {
+          wx.request({
+            url: 'https://85293008.qcloud.la/wxapp/soft/user_create.action',
+            data: {
+              code: res.code,
+              phone: reg_data.username,
+              newPassword: reg_data.password
+            },
+            success: function (res) {
+              if (res.data.code == 0 ) {
+                showTip('注册成功');
+              } else {
+                showTip(res.data.message);
+              }
+            },
+            fail: function () {
+              showTip('网络超时');
+            }
+          });          
+        }
+      },
+      fail: function() {
+        showTip('网络超时');
+      }
+    });
 
     showTip('注册成功');
 
