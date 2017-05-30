@@ -3,6 +3,7 @@ var login = require('../utils/login.js');
 
 var appInstance = getApp(); // 获取App实例
 
+// 登录表单和注册表单数据
 var login_data = {
   username: '',
   password: ''
@@ -13,6 +14,7 @@ reg_data = {
   confirm: ''
 };
 
+// 模态提示框
 var showTip = function(title) {
   wx.showToast({
     title: title,
@@ -22,6 +24,7 @@ var showTip = function(title) {
   });
 };
 
+// 登录或注册后的跳转
 var redirect = function () {
   appInstance.globalData.redirect = true;
 
@@ -36,6 +39,7 @@ var redirect = function () {
   });
 };
 
+// 页面注册
 Page({
   // 页面的初始数据
   data: {
