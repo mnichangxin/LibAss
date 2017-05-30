@@ -21,9 +21,12 @@
     <navigator class="reg-btn" hover-class="none" bindtap="toReg">没有账号？立即注册</navigator>
   </view>
   <view class="reg" wx:else>
-    <view class="section">
+    <!--<view class="section">
       <view class="section-title">用户名：</view>
       <input name="username" placeholder="除下划线，不能含特殊字符" />
+    </view>-->
+    <view class="section" wx:if="{{bind_phone}}">
+      <view class="bind-phone">第一次需绑定手机号</view>
     </view>
     <view class="section">
       <view class="section-title">手机号：</view>
