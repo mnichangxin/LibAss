@@ -13,6 +13,15 @@ reg_data = {
   confirm: ''
 };
 
+var showTip = function(title) {
+  wx.showToast({
+    title: title,
+    icon: 'success',
+    image: '../static/icon/error.png',
+    duration: 2000
+  });
+};
+
 Page({
   // 页面的初始数据
   data: {
@@ -61,19 +70,19 @@ Page({
         password = login_data.password;
     
     if (username == '' || password == '') {
-      console.log('用户名或密码为空');
+      showTip('用户名或密码为空');
       return;
     }
-    if (!/^1[3|4|5|8][0-9]\d{4,8}$/.test(username)) {
-      console.log('手机号格式有误');
+    if (!/^1[3|4|5|7|8][0-9]{9}$/.test(username)) {
+      showTip('手机号格式有误');
       return;
     }
     if (password.length < 6) {
-      console.log('密码至少6位');
+      showTip('密码至少6位');
       return;
     }
 
-    console.log('登录成功！');
+    showTip('登录成功');
     
   },
   regSubmit: function() {
@@ -81,24 +90,24 @@ Page({
         password = reg_data.password,
          confirm = reg_data.confirm;
     
-    if (username == '' || password == '') {
-      console.log('用户名或密码为空');
+    if (username == '' || password == '' || confirm == '') {
+      showTip('用户名或密码为空');
       return;
     }
-    if (!/^1[3|4|5|8][0-9]\d{4,8}$/.test(username)) {
-      console.log('手机号格式有误');
+    if (!/^1[3|4|5|7|8][0-9]{9}$/.test(username)) {
+      showTip('手机号格式错误');
       return;
     }
     if (password.length < 6) {
-      console.log('密码至少6位');
+      showTip('密码至少6位');
       return;
     }
     if (confirm != password) {
-      console.log('两次密码不一致');
+      showTip('两次密码不一致');
       return;
     }
 
-    console.log('注册成功！');
+    showTip('注册成功');
 
   },
 
