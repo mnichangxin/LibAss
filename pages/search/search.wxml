@@ -1,0 +1,17 @@
+<!--search.wxml-->
+<view class="container">
+  <view class="section">
+      <view class="section-title">以下为“{{bookName}}”的搜索结果</view>
+      <view class="list">
+        <view class="list-item" wx:for="{{book}}" wx:key="i">
+          <image src="{{item.imgSrc}}"></image>
+          <view class="book-info">
+            <view class="book-title">{{item.bookTitle}}</view>
+            <view class="book-author">{{item.bookAuthor}}</view>
+            <view class="book-category"><text>分类：</text>{{item.bookCategory}}</view>
+            <navigator url="{{'../detail/detail?id=' + item.bookId}}" class="book-detail" hover-class="none">详细</navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+</view>

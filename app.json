@@ -11,7 +11,8 @@
     "pages/query/query",
     "pages/curborrow/curborrow",
     "pages/hosborrow/hosborrow",
-    "pages/myreverse/myreverse"
+    "pages/myreverse/myreverse",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",

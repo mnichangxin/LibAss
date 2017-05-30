@@ -7,10 +7,10 @@ Page({
   // 初始化数据
   data: {
     book: [
-
+    
     ],
     searchHistory: [
-      
+    
     ],
     search_data: {
       condition: false,
@@ -127,7 +127,7 @@ Page({
     });
 
     wx.navigateTo({
-      url: '../query/query?query_name=' + value,
+      url: '../search/search?bookName=' + value,
       success: function() {
         console.log('success');
       },
@@ -154,7 +154,7 @@ Page({
           searchHistory: []
         });
       } 
-    })
+    });
   },
 
   // 上拉加载
