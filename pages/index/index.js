@@ -7,15 +7,16 @@ Page({
   // 初始化数据
   data: {
     book: [
-
+    
     ],
     searchHistory: [
-      
+    
     ],
     search_data: {
       condition: false,
       isHos: true,
     },
+    input_value: '',
     style: {
       border_raduis: '40rpx'
     }
@@ -84,11 +85,16 @@ Page({
       }
     });
   },
+  inputTap: function(e) {
+    this.setData({
+      input_value: e.detail.value
+    });
+  },
   searchTap: function(e) {
-    var queue = this.data.search_history;
-    var value = e.detail.value.trim();
-
-    // var that = this;
+    var queue = this.data.searchHistory;
+    var value = this.data.input_value.trim();
+    
+    var that = this;
 
     if (value != '') {
       if (queue.indexOf(value) == -1) {
@@ -121,7 +127,7 @@ Page({
     });
 
     wx.navigateTo({
-      url: '../query/query?query_name=' + value,
+      url: '../search/search?bookName=' + value,
       success: function() {
         console.log('success');
       },
@@ -148,7 +154,7 @@ Page({
           searchHistory: []
         });
       } 
-    })
+    });
   },
 
   // 上拉加载

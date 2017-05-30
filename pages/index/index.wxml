@@ -7,8 +7,8 @@
     </view>
     <view class="top-search">
       <view class="comb">
-        <input type="text" placeholder="书目检索" confirm-type="search" placeholder-class="input-placeholder" bindconfirm="searchTap" bindfocus="focusTap" bindblur="blurTap" style="{{'border-radius:' + style.border_raduis + ';'}}" />
-        <view class="search-btn">
+        <input type="text" placeholder="书目检索" confirm-type="search" placeholder-class="input-placeholder" bindconfirm="searchTap" bindfocus="focusTap" bindblur="blurTap" bindinput="inputTap" style="{{'border-radius:' + style.border_raduis + ';'}}" />
+        <view class="search-btn" bindtap="searchTap">
           <image src="../static/icon/search.png"></image>
         </view>
         <view class="search-hository" wx:if="{{search_data.condition}}">
