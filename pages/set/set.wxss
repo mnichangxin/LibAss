@@ -1,1 +1,23 @@
 /* set.wxss */
+
+.container {
+  padding: 50rpx 0;
+}
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  width: 100%;
+  line-height: 100rpx;
+  background: #fff;
+}
+.section text {
+  margin-left: 40rpx;
+  font-size: 13pt;
+}
+.section image {
+  width: 60rpx;
+  height: 60rpx;
+}

@@ -1,2 +1,7 @@
 <!--set.wxml-->
-<text>set.wxml</text>
+<view class="container">
+  <navigator class="section">
+    <view class="text">账户信息</view>
+    <image src="../static/icon/arrow.png"></image>
+  </navigator>
+</view>
