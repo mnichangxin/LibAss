@@ -9,11 +9,11 @@
     "pages/login/login",
     "pages/remind/remind",
     "pages/query/query",
-    "pages/curborrow/curborrow",
-    "pages/hosborrow/hosborrow",
     "pages/myreverse/myreverse",
     "pages/search/search",
-    "pages/exploer/exploer"
+    "pages/exploer/exploer",
+    "pages/borrow/borrow",
+    "pages/set/set"
   ],
   "window": {
     "backgroundTextStyle": "light",

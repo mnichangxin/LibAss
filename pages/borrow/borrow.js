@@ -1,5 +1,4 @@
-// curborrow.js
-var common = require('../utils/getDateStr.js');
+// borrow.js
 
 Page({
 
@@ -10,19 +9,15 @@ Page({
         id: 'ISBN9901', // 图书ID
         book_title: '百年孤独', // 图书名称
         borrow_date: '2017-05-01', // 借阅时间
-        return_date: '2017-08-01' // 应还日期
+        return_date: '2017-08-01', // 应还日期
+        status: '已还' // 当前状态
       },
       {
         id: 'ISBN9901', // 图书ID
         book_title: '百年孤独', // 图书名称
         borrow_date: '2017-05-01', // 借阅时间
-        return_date: '2017-08-01' // 应还日期
-      },
-      {
-        id: 'ISBN9901', // 图书ID
-        book_title: '百年孤独', // 图书名称
-        borrow_date: '2017-05-01', // 借阅时间
-        return_date: '2017-08-01' // 应还日期
+        return_date: '2017-08-01', // 应还日期
+        status: '未还' // 当前状态
       }
     ],
     condition: true

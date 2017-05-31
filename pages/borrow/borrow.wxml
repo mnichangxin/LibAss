@@ -1,4 +1,4 @@
-<!--curborrow.wxml-->
+<!--borrow.wxml-->
 <view class="container">
   <block wx:if="{{condition}}">
     <view class="item" wx:for="{{curborrow}}" wx:key="i">
@@ -6,6 +6,7 @@
       <view class="book-title">书名：<text>{{item.book_title}}</text></view>
       <view class="borrow-date">借阅时间：<text>{{item.borrow_date}}</text></view>
       <view class="return-date">应还时间：<text>{{item.return_date}}</text></view>
+      <view class="return-date">当前状态：<text>已还</text></view>
     </view>
   </block>
   <view class="item" wx:else>暂无记录</view>
