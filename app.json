@@ -13,7 +13,8 @@
     "pages/search/search",
     "pages/exploer/exploer",
     "pages/borrow/borrow",
-    "pages/set/set"
+    "pages/set/set",
+    "pages/account/account"
   ],
   "window": {
     "backgroundTextStyle": "light",

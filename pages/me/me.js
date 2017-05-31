@@ -21,6 +21,7 @@ Page({
 
     // 根据是否登录渲染不同的数据
     isLogin.isLogin(function () { // 请求用户信息，成功的回调
+      // 调用微信接口获取用户基本信息
       wx.getUserInfo({
         success: function (res) {
           that.setData({
