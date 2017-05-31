@@ -22,7 +22,7 @@
     <view class="main-function">
       <view class="scan-code" bindtap="scanTap">
         <image src="../static/icon/scan.png"></image>
-        <text>扫码借书</text>
+        <text>扫一扫</text>
       </view>
       <!--<navigator class="book-reverse" url="../reverse/reverse" hover-class="none">
         <image src="../static/icon/reverse.png"></image>

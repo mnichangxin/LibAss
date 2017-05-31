@@ -12,7 +12,8 @@
     "pages/curborrow/curborrow",
     "pages/hosborrow/hosborrow",
     "pages/myreverse/myreverse",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/exploer/exploer"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -39,6 +40,12 @@
         "text": "消息",
         "iconPath": "pages/static/icon/message.png",
         "selectedIconPath": "pages/static/icon/message_selected.png"
+      },
+      {
+        "pagePath": "pages/exploer/exploer",
+        "text": "发现",
+        "iconPath": "pages/static/icon/exploer.png",
+        "selectedIconPath": "pages/static/icon/exploer_selected.png"
       },
       {
         "pagePath": "pages/me/me",
