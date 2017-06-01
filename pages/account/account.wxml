@@ -1,2 +1,18 @@
-<!--pages/account/account.wxml-->
-<text>pages/account/account.wxml</text>
+<!--  account.wxml -->
+<view class="container">
+    <view class="username-setting">
+        <text>昵称</text>
+        <input type="text" value="{{user.userUsername}}" name="username" disabled />
+    </view>
+    <view class="username-setting">
+        <text>手机号</text>
+        <input type="password" value="{{user.userPassword}}" name="password" disabled />
+    </view>
+    <view class="username-setting">
+        <text>密码</text>
+        <input type="password" value="{{user.userPassword}}" name="password" disabled />
+    </view>
+    <view class="button">
+        <button class="modify-btn" bindtap="cancelBtn">修改</button>
+    </view>
+</view>

@@ -1,4 +1,4 @@
-// pages/account/account.js
+/* account.js */
 
 Page({  
   // 页面初始数据
