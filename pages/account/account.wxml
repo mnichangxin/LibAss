@@ -1,16 +1,16 @@
 <!--  account.wxml -->
 <view class="container">
     <view class="username-setting">
-        <text>昵称</text>
-        <input type="text" value="{{user.userUsername}}" name="username" disabled />
+        <text>昵 称</text>
+        <input type="text" value="{{userInfo.username}}" name="username" disabled />
     </view>
     <view class="username-setting">
         <text>手机号</text>
-        <input type="password" value="{{user.userPassword}}" name="password" disabled />
+        <input type="text" value="{{userInfo.phone}}" name="password" disabled />
     </view>
     <view class="username-setting">
-        <text>密码</text>
-        <input type="password" value="{{user.userPassword}}" name="password" disabled />
+        <text>密 码</text>
+        <input type="password" value="{{user.password}}" name="password" disabled />
     </view>
     <view class="button">
         <button class="modify-btn" bindtap="cancelBtn">修改</button>

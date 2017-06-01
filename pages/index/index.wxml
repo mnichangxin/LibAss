@@ -45,6 +45,7 @@
             <navigator url="{{'../detail/detail?id=' + item.bookId}}" class="book-detail" hover-class="none">详细</navigator>
           </view>
         </view>
+        <view class="load" wx:if="{{load_condition}}">上拉加载</view>
       </view>
     </view>
   </view>
