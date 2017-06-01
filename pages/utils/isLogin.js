@@ -1,5 +1,5 @@
 /* 判断是否登录 */
-function isLogin() {
+function isLogin(callback, error) {
   // 检查登录态
   wx.checkSession({
     success: function() {
@@ -7,31 +7,38 @@ function isLogin() {
       wx.getStorage({
         key: 'token',
         success: function(res) {
-          // 带token请求服务端，判断是否登录
-          wx.request({
-            url: '',
-            data: {
-              token: ''
-            },
-            success: function(res) {
-              console.log('登录成功');
-              return true;
-            },
-            fail: function() {
-              console.log('发送请求到服务端失败');
-              return false;
-            }
-          })
+          if (res.data) {
+            // 发送token请求服务端，判断是否登录
+            wx.request({
+              url: 'https://85293008.qcloud.la/wxapp/soft/login_check.action', // 验证登录地址
+              data: {
+                token: res.data
+              },
+              success: function (res) {
+                if (res.data.code == 0) {
+                  console.log('登录成功');
+                  console.log(res);
+                  callback(); // 执行回调函数
+                } else {
+                  console.log('登录失败，session不一致');
+                  console.log(res);
+                }
+              },
+              fail: function () {
+                console.log('发送请求到服务端失败');
+              }
+            });
+          } else {
+            console.log('缓存中无Session，登录失败');
+          }
         },
         fail: function() {
-          console.log('缓存中无数据，登录失败');
-          return false;
+          console.log('缓存中无Session，登录失败');
         }
       })
     },
     fail: function() {
       console.log('需要重新拉取登录态');
-      return false;
     }
   });
 }

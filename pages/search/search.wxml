@@ -1,7 +1,7 @@
-<!--query.wxml-->
+<!--search.wxml-->
 <view class="container">
   <view class="section">
-      <view class="section-title">{{thirdName}}</view>
+      <view class="section-title">以下为“{{bookName}}”的搜索结果</view>
       <view class="list">
         <view class="list-item" wx:for="{{book}}" wx:key="i">
           <image src="{{item.imgSrc}}"></image>

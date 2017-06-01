@@ -7,9 +7,12 @@
     </view>
     <view class="top-search">
       <view class="comb">
-        <input type="text" placeholder="书目检索" confirm-type="search" placeholder-class="input-placeholder" bindconfirm="searchTap" bindfocus="focusTap" bindblur="blurTap" style="{{'border-radius:' + style.border_raduis + ';'}}" />
+        <input type="text" placeholder="书目检索" confirm-type="search" placeholder-class="input-placeholder" bindconfirm="searchTap" bindfocus="focusTap" bindblur="blurTap" bindinput="inputTap" style="{{'border-radius:' + style.border_raduis + ';'}}" />
+        <view class="search-btn" bindtap="searchTap">
+          <image src="../static/icon/search.png"></image>
+        </view>
         <view class="search-hository" wx:if="{{search_data.condition}}">
-          <view class="hos-item" wx:for="{{search_history}}" wx:if="{{search_data.isHos}}" wx:key="i">{{item}}</view>            
+          <view class="hos-item" wx:for="{{searchHistory}}" wx:if="{{search_data.isHos}}" wx:key="i">{{item}}</view>            
           <view class="hos-clear" bindtap="clearTap">清除搜索历史</view>
         </view>
       </view>
@@ -19,12 +22,12 @@
     <view class="main-function">
       <view class="scan-code" bindtap="scanTap">
         <image src="../static/icon/scan.png"></image>
-        <text>扫码借书</text>
+        <text>扫一扫</text>
       </view>
-      <navigator class="book-reverse" url="../reverse/reverse" hover-class="none">
+      <!--<navigator class="book-reverse" url="../reverse/reverse" hover-class="none">
         <image src="../static/icon/reverse.png"></image>
         <text>在线预订</text>
-      </navigator>
+      </navigator>-->
       <navigator class="book-navigation" url="../navigation/navigation" hover-class="none">
         <image src="../static/icon/navigation.png"></image>
         <text>图书导航</text>
@@ -34,12 +37,12 @@
       <view class="main-show-title">图书推荐</view>
       <view class="list">
         <view wx:for="{{book}}" wx:key="i" class="list-item">
-          <image src="{{item.img_src}}"></image>
+          <image src="{{item.imgSrc}}"></image>
           <view class="book-info">
-            <view class="book-title">{{item.book_title}}</view>
-            <view class="book-author">{{item.book_author}}</view>
-            <view class="book-category"><text>分类：</text>{{item.book_category}}</view>
-            <navigator url="{{'../detail/detail?id=' + item.id}}" class="book-detail">详细</navigator>
+            <view class="book-title">{{item.bookTitle}}</view>
+            <view class="book-author">{{item.bookAuthor}}</view>
+            <view class="book-category"><text>分类：</text>{{item.bookCategory}}</view>
+            <navigator url="{{'../detail/detail?id=' + item.bookId}}" class="book-detail" hover-class="none">详细</navigator>
           </view>
         </view>
       </view>

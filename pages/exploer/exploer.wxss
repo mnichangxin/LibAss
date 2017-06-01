@@ -1,0 +1,24 @@
+/* exploer.wxss */
+
+.container {
+  padding: 50rpx 0;
+}
+.section {
+  padding-left: 40rpx;
+  box-sizing: border-box;
+  width: 100%;
+  line-height: 100rpx;
+  background: #fff;
+}
+.section image {
+  display: inline-block;
+  width: 80rpx;
+  height: 80rpx;
+  vertical-align: middle;
+}
+.section text {
+  display: inline-block;
+  margin-left: 40rpx;
+  vertical-align: middle;
+  font-size: 13pt;
+}

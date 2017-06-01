@@ -1,0 +1,39 @@
+/* account.wxss */
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+.username-setting {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    width: 100%;
+}
+.username-setting text {
+    line-height: 1.7em;
+    color: #09BB07;
+    font-size: 14pt;
+}
+.username-setting input {
+    margin-left: 40rpx;
+    width: 50%;    
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 100rpx;
+    width: 100%;
+}
+.modify-btn {
+    width: 35%;
+    color: #fff;
+    background: #09BB07;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 10rpx;
+    font-size: 12pt;
+}
+

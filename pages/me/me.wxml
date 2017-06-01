@@ -1,48 +1,53 @@
 <!--me.wxml-->
 <view class="container">
-  <view class="top">
-    <view class="login">
-      <view class="user-head">
-        <image src="../static/icon/user-head.png"></image>
-      </view>
-      <view class="user-name">
-        <text>李昶昕</text>
+  <block wx:if="{{!condition}}">
+    <view class="top">
+      <view class="non-login">
+        <view class="user-head">
+          <image src="../static/icon/non-login.png"></image>
+        </view>
+        <navigator url="../login/login" class="non-login-btn">
+          <text>登录</text>
+          <image src="../static/icon/login.png"></image>
+        </navigator>
       </view>
     </view>
-    <view class="non-login">
-      <view class="user-head">
-        <image src="../static/icon/non-login.png"></image>
+  </block>
+  <block wx:else>
+    <view class="top">
+      <view class="login">
+        <view class="user-head">
+          <image src="{{user_info.avatar_url}}"></image>
+        </view>
+        <view class="user-name">
+          <text>{{user_info.nick_name}}</text>
+        </view>
+        <view class="exit-btn" bindtap="exitLogin">
+          <text>退出登录</text>
+          <image src="../static/icon/login.png"></image>
+        </view>
       </view>
-      <navigator url="../login/login" class="non-login-btn">
-        <text>登录</text>
-        <image src="../static/icon/login.png"></image>
+    </view>
+    <view class="main">
+      <view class="menu">
+        <navigator url="../borrow/borrow" class="menu-list">
+          <image src="../static/icon/current.png" class="list-icon"></image>
+          <text>借阅记录</text>
+          <image src="../static/icon/arrow.png" class="list-arrow"></image>
+        </navigator>
+        <navigator url="../myreverse/myreverse" class="menu-list">
+          <image src="../static/icon/reverse.png" class="list-icon"></image>
+          <text>我的预订</text>
+          <image src="../static/icon/arrow.png" class="list-arrow"></image>
+        </navigator>
+      </view>
+      <navigator url="../set/set" class="menu menu-set">
+        <view class="menu-list">
+          <image src="../static/icon/set.png" class="list-icon"></image>
+          <text>设置</text>
+          <image src="../static/icon/arrow.png" class="list-arrow"></image>
+        </view>
       </navigator>
     </view>
-  </view>
-  <view class="main">
-    <view class="menu">
-      <navigator url="../hosborrow/hosborrow" class="menu-list">
-        <image src="../static/icon/history.png" class="list-icon"></image>
-        <text>借阅历史</text>
-        <image src="../static/icon/arrow.png" class="list-arrow"></image>
-      </navigator>
-      <navigator url="../curborrow/curborrow" class="menu-list">
-        <image src="../static/icon/current.png" class="list-icon"></image>
-        <text>当前借阅</text>
-        <image src="../static/icon/arrow.png" class="list-arrow"></image>
-      </navigator>
-      <navigator url="../myreverse/myreverse" class="menu-list">
-        <image src="../static/icon/menu_reverse.png" class="list-icon"></image>
-        <text>我的预订</text>
-        <image src="../static/icon/arrow.png" class="list-arrow"></image>
-      </navigator>
-    </view>
-    <!--<view class="menu menu-set">
-      <view class="menu-list">
-        <image src="../static/icon/set.png" class="list-icon"></image>
-        <text>设置</text>
-        <image src="../static/icon/arrow.png" class="list-arrow"></image>
-      </view>
-    </view>-->
-  </view>
+  </block>
 </view>
