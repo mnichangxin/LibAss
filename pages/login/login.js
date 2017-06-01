@@ -112,7 +112,7 @@ Page({
             key: 'token',
             data: res.data.token
           });
-          appInstance.globalData.userInfo.phone = res.data.phone; // 把手机号存入App数据中
+          appInstance.globalData.phone = res.data.phone; // 把手机号存入App数据中
           console.log(res.data.phone);
           showTip('登录成功');
           redirect();
@@ -160,7 +160,7 @@ Page({
             },
             success: function (res) {
               if (res.data.code == 0 ) {
-                appInstance.globalData.userInfo.phone = reg_data.username; // 把手机号存入App数据中
+                appInstance.globalData.phone = reg_data.username; // 把手机号存入App数据中
                 console.log(appInstance.globalData.userInfo.phone);
                 showTip('注册成功');
                 redirect();
@@ -197,7 +197,7 @@ Page({
           success: function (res) {
             // token返回空说明未注册，跳转到注册页面；不为空直接登录
             if (res.data.token != null) {
-              appInstance.globalData.userInfo.phone = res.data.phone; // 存入App数据
+              appInstance.globalData.phone = res.data.phone; // 存入App数据
               redirect();
             } else {
               that.setData({

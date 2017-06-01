@@ -31,6 +31,8 @@ Page({
             },
             condition: true
           });
+
+          appInstance.globalData.username = res.userInfo.nickName;
         }
       });
     });
