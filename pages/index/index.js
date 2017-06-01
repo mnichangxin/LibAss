@@ -2,6 +2,7 @@
 // var isLogin = require('../utils/isLogin.js');
 // var login = require('../utils/login.js');
 var getToken = require('../utils/getToken.js')
+var pageLode = require('../utils/pageLode.js');
 
 Page({
   // 初始化数据
@@ -17,6 +18,7 @@ Page({
       isHos: true,
     },
     input_value: '',
+    load_condition: false,
     style: {
       border_raduis: '40rpx'
     }
@@ -158,13 +160,41 @@ Page({
   },
 
   // 上拉加载
-  // onReachBottom: function() {
-  //   wx.request({
-  //     url: 'https://85293008.qcloud.la/wxapp/soft/RecommendBooks.action',
-  //     data: {
+  onReachBottom: function() {
+    console.log('上拉加载');
 
-  //     }
-  //   })
-  // }
+    pageLode.pageLode();
+
+    // this.setData({
+    //   load_condition: true
+    // });
+    
+    // this.setData({
+    //   load_condition: false
+    // });
+
+    // wx.request({
+    //   url: 'https://85293008.qcloud.la/wxapp/soft/RecommendBooks.action',
+    //   data: {
+    //     token: getToken.getToken(),
+    //     page: page,
+    //     pageSize: 5
+    //   },
+    //   success: function (res) {
+    //     console.log(res.data);
+    //     var book = that.data.book;
+
+    //     book.push(res.data); // 将下一页数据加到队列中
+
+    //     // 重新渲染
+    //     that.setData({
+    //       book: book
+    //     });
+
+    //     page++;
+    //   }
+    // });
+
+  }
 
 });
