@@ -32,8 +32,6 @@ function pageLoad(url, scope) {
           });
 
           page++;
-
-          console.log(page);
         }
       }
     });
