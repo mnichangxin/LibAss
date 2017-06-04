@@ -99,19 +99,6 @@ Page({
     if (value != '') {
       if (queue.indexOf(value) == -1) {
         queue.push(value);
-
-        // wx.request({
-        //   url: 'https://85293008.qcloud.la/wxapp/soft/FindBooks_books.action',
-        //   data: {
-        //     token: getToken.getToken(),
-        //     bookName: value,
-        //     page: 1,
-        //     pageSize: 5
-        //   },
-        //   success: function(res) {
-            
-        //   }
-        // });
       }    
     } else {
       return;
