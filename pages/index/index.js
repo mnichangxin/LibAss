@@ -24,22 +24,9 @@ Page({
 
   // 页面加载
   onLoad: function () {
-    var that = this;
+    var url = 'https://85293008.qcloud.la/wxapp/soft/RecommendBooks.action';
 
-    wx.request({
-      url: 'https://85293008.qcloud.la/wxapp/soft/RecommendBooks.action',
-      data: {
-        token: getToken.getToken(),
-        page: 1,
-        pageSize: 5
-      },
-      success: function(res) {
-        console.log(res.data);
-        that.setData({
-          book: res.data
-        });
-      }
-    });
+    pageLoad.pageLoad(url, this);
   },
 
   // 扫码
@@ -99,19 +86,6 @@ Page({
     if (value != '') {
       if (queue.indexOf(value) == -1) {
         queue.push(value);
-
-        // wx.request({
-        //   url: 'https://85293008.qcloud.la/wxapp/soft/FindBooks_books.action',
-        //   data: {
-        //     token: getToken.getToken(),
-        //     bookName: value,
-        //     page: 1,
-        //     pageSize: 5
-        //   },
-        //   success: function(res) {
-            
-        //   }
-        // });
       }    
     } else {
       return;
@@ -159,8 +133,6 @@ Page({
 
   // 上拉加载
   onReachBottom: function() {
-    console.log('上拉加载');
-
     var url = 'https://85293008.qcloud.la/wxapp/soft/RecommendBooks.action';
 
     pageLoad.pageLoad(url, this);

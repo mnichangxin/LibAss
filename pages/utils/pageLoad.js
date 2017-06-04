@@ -1,6 +1,6 @@
 /* pageLoad.js
  *
- * 页面加载组件
+ * 分页加载组件
  */
 
 var getToken = require('../utils/getToken.js');
@@ -23,18 +23,16 @@ function pageLoad(url, scope) {
       success: function (res) {
         var book = scope.data.book;
 
-        console.log(res.data);
+        if (res.data) {
+          book = book.concat(res.data); // 将下一页数据加到队列中
 
-        book.push(res.data); // 将下一页数据加到队列中
+          // 重新渲染
+          scope.setData({
+            book: book
+          });
 
-        // 重新渲染
-        scope.setData({
-          book: book
-        });
-
-        page++;
-
-        console.log(page);
+          page++;
+        }
       }
     });
 }
