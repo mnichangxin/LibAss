@@ -9,7 +9,7 @@ Page({
     
     ],
     searchHistory: [
-    
+      
     ],
     search_data: {
       condition: false,
@@ -25,7 +25,7 @@ Page({
   // 页面加载
   onLoad: function () {
     var url = 'https://85293008.qcloud.la/wxapp/soft/RecommendBooks.action';
-
+    
     pageLoad.pageLoad(url, this);
   },
 

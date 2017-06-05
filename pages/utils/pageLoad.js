@@ -7,7 +7,11 @@ var getToken = require('../utils/getToken.js');
 
 var page = 1; // 初始页码
 
-function pageLoad(url, scope) {
+function pageLoad(url, scope, object, isPage) {
+    if (isPage) {
+      page = 1;
+    }
+    
     scope.setData({
       load_condition: true
     });
@@ -15,11 +19,11 @@ function pageLoad(url, scope) {
     // 一次一请求
     wx.request({
       url: url,
-      data: {
+      data: Object.assign({
         token: getToken.getToken(),
         page: page,
         pageSize: 1
-      },
+      }, object),
       success: function (res) {
         var book = scope.data.book;
 
@@ -31,6 +35,8 @@ function pageLoad(url, scope) {
             book: book
           });
 
+          console.log(page);
+
           page++;
         }
       }
@@ -38,3 +44,4 @@ function pageLoad(url, scope) {
 }
 
 module.exports.pageLoad = pageLoad;
+module.exports.page = page;
