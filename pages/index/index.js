@@ -27,6 +27,11 @@ Page({
     var url = 'https://85293008.qcloud.la/wxapp/soft/RecommendBooks.action';
 
     pageLoad.pageLoad(url, this);
+
+    // var o1 = { a: 1 };
+    // var o2 = { b: 2 };
+    // var o3 = { c: 3 };
+    // console.log(Object.assign(o1, o2, o3));
   },
 
   // 扫码
