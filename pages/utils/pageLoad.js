@@ -7,7 +7,11 @@ var getToken = require('../utils/getToken.js');
 
 var page = 1; // 初始页码
 
-function pageLoad(url, scope, object) {
+function pageLoad(url, scope, object, isPage) {
+    if (isPage) {
+      page = 1;
+    }
+    
     scope.setData({
       load_condition: true
     });
@@ -31,6 +35,8 @@ function pageLoad(url, scope, object) {
             book: book
           });
 
+          console.log(page);
+
           page++;
         }
       }
@@ -38,3 +44,4 @@ function pageLoad(url, scope, object) {
 }
 
 module.exports.pageLoad = pageLoad;
+module.exports.page = page;

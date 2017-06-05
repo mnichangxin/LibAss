@@ -1,5 +1,6 @@
 // search.js
 var getToken = require('../utils/getToken.js');
+var pageLoad = require('../utils/pageLoad.js');
 
 Page({
   // 页面初始数据
@@ -14,20 +15,23 @@ Page({
   onLoad: function (options) {
     var that = this;
 
-    wx.request({
-      url: 'https://85293008.qcloud.la/wxapp/soft/FindBooks_books.action',
-      data: {
-        token: getToken.getToken(),
-        bookName: options.bookName,
-        page: 1,
-        pageSize: 5
-      },
-      success: function (res) {
-        that.setData({
-          bookName: options.bookName,
-          book: res.data
-        });
-      }
+    that.setData({
+      bookName: options.bookName
+    });
+
+    var url = 'https://85293008.qcloud.la/wxapp/soft/FindBooks_books.action';
+
+    pageLoad.pageLoad(url, that, {
+      bookName: that.data.bookName
+    }, true);
+  },
+
+  // 上拉加载
+  onReachBottom: function () {
+    var url = 'https://85293008.qcloud.la/wxapp/soft/FindBooks_books.action';
+
+    pageLoad.pageLoad(url, this, {
+      bookName: this.data.bookName
     });
   }
 

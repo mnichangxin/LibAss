@@ -25,7 +25,7 @@ Page({
 
     pageLoad.pageLoad(url, that, {
       thridId: that.data.thirdId
-    });
+    }, true);
   },
 
   // 上拉加载
