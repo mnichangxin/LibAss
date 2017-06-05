@@ -12,7 +12,9 @@
           <image src="../static/icon/search.png"></image>
         </view>
         <view class="search-hository" wx:if="{{search_data.condition}}">
-          <view class="hos-item" wx:for="{{searchHistory}}" wx:if="{{search_data.isHos}}" wx:key="i">{{item}}</view>            
+          <block wx:for="{{searchHistory}}" wx:if="{{search_data.isHos}}" wx:key="i">
+            <navigator class="hos-item" url="{{'../search/search?bookName=' + item}}">{{item}}</navigator>                        
+          </block>
           <view class="hos-clear" bindtap="clearTap">清除搜索历史</view>
         </view>
       </view>
