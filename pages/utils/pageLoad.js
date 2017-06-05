@@ -44,4 +44,3 @@ function pageLoad(url, scope, object, isPage) {
 }
 
 module.exports.pageLoad = pageLoad;
-module.exports.page = page;
