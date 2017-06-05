@@ -23,12 +23,12 @@
         {{book.bookDetail.introduction}}
       </view>
     </view>
-    <view class="main-list">
+    <!--<view class="main-list">
       <view class="list-title">目录</view>
       <view class="list-content">
         {{book.bookDetail.catalog}}
       </view>
-    </view>
+    </view>-->
     <view class="main-list">
       <view class="list-title">导读</view>
       <view class="list-content">
