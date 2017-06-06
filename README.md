@@ -2,7 +2,7 @@
 
 It's a assistant to borrow or reserve the book from Library.
 
-# Instructions
+## Instructions
 
 **Using:**
 
@@ -18,6 +18,6 @@ It's a assistant to borrow or reserve the book from Library.
 
 Continue...
 
-# License
+## License
 
 [GPL](https://github.com/mnichangxin/LibAss/blob/master/COPYING)
