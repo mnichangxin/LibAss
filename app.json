@@ -14,7 +14,8 @@
     "pages/exploer/exploer",
     "pages/borrow/borrow",
     "pages/set/set",
-    "pages/account/account"
+    "pages/account/account",
+    "pages/relationship/relationship"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,6 +1,6 @@
 <!--pages/exploer/exploer.wxml-->
 <view class="container">
-  <navigator class="section circle">
+  <navigator url="../relationship/relationship" class="section circle">
     <image src="../static/icon/circle.png"></image>
     <text>书圈</text>
   </navigator>
