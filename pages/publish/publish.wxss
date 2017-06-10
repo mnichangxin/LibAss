@@ -1,0 +1,32 @@
+/* publish.wxss */
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #D7D7D7;
+}
+.nav-title {
+  font-size: 12pt;
+}
+.nav-button {
+  margin: 0;
+  width: 140rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #55BB41;
+  font-size: 12pt;
+  color: #fff;
+}
+.article {
+  padding: 30rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+.article textarea {
+  width: 100%;
+  font-size: 12pt;
+
+}

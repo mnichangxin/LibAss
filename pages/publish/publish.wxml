@@ -1,0 +1,10 @@
+<!--publish.wxml-->
+<view class="container">
+  <view class="nav">
+    <text class="nav-title">发布一条书圈</text>
+    <button class="nav-button" disabled="{{button_condition}}">发送</button>
+  </view>
+  <view class="article">
+    <textarea placeholder="分享你与书的故事" maxlength="-1" bindinput="inputEvent" />
+  </view>
+</view>

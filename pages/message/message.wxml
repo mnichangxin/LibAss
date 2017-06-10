@@ -1,2 +1,9 @@
 <!--message.wxml-->
-<text>message.wxml</text>
+<view class="container">
+  <view class="message">
+    <view class="message-cate notice">
+      <image src="../static/icon/notice.png"></image>
+      <text>通知类消息</text>
+    </view>
+  </view>
+</view>
