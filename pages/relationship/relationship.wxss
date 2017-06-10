@@ -1,13 +1,11 @@
 /* relationship.wxss */
 
-.container {
-  padding: 20rpx;
-}
-.list {
-  padding-top: 20rpx;
-  width: 100%;
-}
 .item {
+  margin-top: 20rpx;
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.item-main {
   display: flex;
   justify-content: space-between;
   margin-top: 20rpx;
@@ -18,7 +16,7 @@
 .content {
   padding: 10rpx 0;
   width: 84%;
-  font-size: 12pt;
+  font-size: 11pt;
 }
 .nickname {
   color: #175AA7;
@@ -27,8 +25,59 @@
   margin-top: 16rpx;
   line-height: 20pt;
 }
-.time {
+.bottom {
   margin-top: 16rpx;
-  font-size: 11pt;
+  overflow: hidden;
+}
+.time {
+  float: left;
+  font-size: 10pt;
   color: #9D9D9D;
+}
+.interaction {
+  float: right;
+}
+.interaction image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.voteup {
+  display: inline-block;
+  margin-right: 30rpx;
+  height: 40rpx;
+}
+.voteup image {
+  vertical-align: middle;
+}
+.voteup text {
+  margin-left: 5rpx;
+  vertical-align: middle;
+  font-weight: bold;
+}
+.comment-btn {
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+.comment {
+  position: relative;
+  margin-top: 20rpx;
+  padding: 10rpx 20rpx 20rpx 20rpx;
+  background: #CBCBCB;
+  font-size: 11pt;
+}
+.angle {
+  position: absolute;
+  top: -12rpx;
+  left: 20rpx; 
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 14rpx solid #CBCBCB;
+}
+.comment-item {
+  margin-top: 20rpx;
+}
+.comment-author {
+  color: #175AA7;
 }
