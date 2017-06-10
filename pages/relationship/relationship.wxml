@@ -6,23 +6,26 @@
       <view class="content">
         <view class="nickname">李昶昕</view>
         <view class="text">基于微信小程序轻快的特点，我们拟定了小程序界面设计指南和建议。 设计指南建立在充分尊重用户知情权与操作权的基础之上。旨在微信生态体系内，建立友好、高效、一致的用户体验，同时最大程度适应和支持不同需求，实现用户与小程序服务方的共赢。</view>
-        <view class="time">2017-06-10</view>
-      </view>
-    </view>
-    <view class="item">
-      <image src="../static/icon/user-head.png" mode="widthFix" class="head"></image>
-      <view class="content">
-        <view class="nickname">李昶昕</view>
-        <view class="text">基于微信小程序轻快的特点，我们拟定了小程序界面设计指南和建议。 设计指南建立在充分尊重用户知情权与操作权的基础之上。旨在微信生态体系内，建立友好、高效、一致的用户体验，同时最大程度适应和支持不同需求，实现用户与小程序服务方的共赢。</view>
-        <view class="time">2017-06-10</view>
-      </view>
-    </view>
-    <view class="item">
-      <image src="../static/icon/user-head.png" mode="widthFix" class="head"></image>
-      <view class="content">
-        <view class="nickname">李昶昕</view>
-        <view class="text">基于微信小程序轻快的特点，我们拟定了小程序界面设计指南和建议。 设计指南建立在充分尊重用户知情权与操作权的基础之上。旨在微信生态体系内，建立友好、高效、一致的用户体验，同时最大程度适应和支持不同需求，实现用户与小程序服务方的共赢。</view>
-        <view class="time">2017-06-10</view>
+        <view class="bottom">
+          <view class="time">2017-06-10</view>
+            <view class="interaction">
+            <view class="voteup">
+              <image src="../static/icon/voteup.png"></image>      
+              <text class="voteup-num">1</text>      
+            </view>  
+            <image src="../static/icon/comment.png" class="comment-btn"></image>
+          </view>              
+        </view>
+        <view class="comment">
+          <view class="comment-item">
+            <text class="comment-author">乔布斯：</text>
+            <text class="comment-content">乔老爷子在此</text>
+          </view>
+          <view class="comment-item">
+            <text class="comment-author">雷布斯：</text>
+            <text class="comment-content">膜拜大佬</text>
+          </view>
+        </view>
       </view>
     </view>
   </view>
