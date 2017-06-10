@@ -1,1 +1,24 @@
 /* message.wxss */
+
+.message {
+  padding: 20rpx 0;
+  width: 100%;
+}
+.message-cate {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100rpx;  
+  background: #fff;
+}
+.message-cate image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.message-cate text {
+  margin-left: 20rpx;
+  font-size: 12pt;
+}

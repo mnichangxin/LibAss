@@ -15,7 +15,8 @@
     "pages/borrow/borrow",
     "pages/set/set",
     "pages/account/account",
-    "pages/relationship/relationship"
+    "pages/relationship/relationship",
+    "pages/publish/publish"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -42,6 +43,12 @@
         "text": "消息",
         "iconPath": "pages/static/icon/message.png",
         "selectedIconPath": "pages/static/icon/message_selected.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "动态",
+        "iconPath": "pages/static/icon/publish.png",
+        "selectedIconPath": "pages/static/icon/publish.png"
       },
       {
         "pagePath": "pages/exploer/exploer",
