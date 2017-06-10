@@ -1,13 +1,11 @@
 /* relationship.wxss */
 
-.container {
-  padding: 20rpx;
-}
-.list {
-  padding-top: 20rpx;
-  width: 100%;
-}
 .item {
+  margin-top: 20rpx;
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.item-main {
   display: flex;
   justify-content: space-between;
   margin-top: 20rpx;
@@ -61,10 +59,21 @@
   vertical-align: middle;
 }
 .comment {
+  position: relative;
   margin-top: 20rpx;
-  padding: 0 10rpx 10rpx;
-  background: #DEDEDE;
+  padding: 10rpx 20rpx 20rpx 20rpx;
+  background: #CBCBCB;
   font-size: 11pt;
+}
+.angle {
+  position: absolute;
+  top: -12rpx;
+  left: 20rpx; 
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 14rpx solid #CBCBCB;
 }
 .comment-item {
   margin-top: 20rpx;
