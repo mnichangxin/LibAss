@@ -13,7 +13,7 @@
               <image src="../static/icon/voteup.png"></image>      
               <text class="voteup-num">{{item.voteup}}</text>      
             </view>  
-            <image src="../static/icon/comment.png" class="comment-btn"></image>
+            <image src="../static/icon/comment.png" class="comment-btn" bindtap="commentBtn"></image>
           </view>              
         </view>
         <view class="comment">
@@ -24,6 +24,14 @@
           </view>
         </view>
       </view>
+    </view>
+  </view>
+  <view class="comment-box" wx:if="{{commentbox.condition}}">
+    <view class="comment-input">
+      <textarea auto-focus bindinput="commentInput" bindblur="commentBlur" />
+    </view>
+    <view class="comment-send">
+      <button class="send-btn" disabled="{{commentbox.disabled}}">发送</button>
     </view>
   </view>
 </view>
