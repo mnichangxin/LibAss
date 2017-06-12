@@ -1,0 +1,27 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "The admin of AssLib",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.js",
+    "build": "babel src --watch --out-dir lib"
+  },
+  "keywords": [
+    "react"
+  ],
+  "repository": {
+    
+  },
+  "author": "mnichangxin@163.com",
+  "license": "MIT",
+  "devDependencies": {
+    "amazeui-react": "^1.2.3",
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "webpack": "^2.6.1"
+  }
+}
