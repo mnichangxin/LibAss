@@ -4,8 +4,7 @@
   "description": "The admin of AssLib",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config webpack.config.js",
-    "build": "babel src --watch --out-dir lib"
+    "start": "webpack"
   },
   "keywords": [
     "react"

@@ -70,7 +70,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-throw new Error("Module parse failed: E:\\Github\\LibAss\\admin\\src\\test.js Unexpected token (8:4)\nYou may need an appropriate loader to handle this file type.\n| React.ReactDOM.render(\r\n|     // <Button>Button</Button>,\r\n|     <div>Hello world</div>,\r\n|     mountNode\r\n| )");
+throw new Error("Module parse failed: E:\\Github\\LibAss\\admin\\src\\index.js Unexpected token (27:12)\nYou may need an appropriate loader to handle this file type.\n| \r\n|         let Menus = menus.map((item, index) => \r\n|             <li className={styles.menu} onClick={item.handler} key={index}>{item.value}</li>\r\n|         )\r\n|   \r");
 
 /***/ })
 /******/ ]);
