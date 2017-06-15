@@ -8,10 +8,10 @@ class App extends React.Component {
     }
 
     render() {
-        const container = styles.container
+        let container = styles.container
 
         return (
-            <div className="container"></div>
+            <div className={container}></div>
         )
     }
 }
