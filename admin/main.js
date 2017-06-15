@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import styles from './src/main/main.less'
 
 class App extends React.Component {
     constructor() {
@@ -7,8 +8,10 @@ class App extends React.Component {
     }
 
     render() {
+        const container = styles.container
+
         return (
-            <h1>Hello World!</h1>
+            <div className="container"></div>
         )
     }
 }
