@@ -7,7 +7,7 @@ const extractCSS = new ExtractTextPlugin({
     allChunks: true
 })
 const extractLESS = new ExtractTextPlugin({
-    filename: '[name].[contenthash:8].less',
+    filename: '[name].[contenthash:8].css',
     allChunks: true 
 })
 
@@ -15,8 +15,7 @@ module.exports = {
     entry: './main.js',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'build'),
-        publicPath: '/'
+        path: path.resolve(__dirname, 'build')
     },
     module: {
         rules: [
@@ -31,7 +30,8 @@ module.exports = {
                     use: {
                         loader: 'css-loader',
                         options: {
-                            modules: true
+                            modules: true,
+                            camelCase: true
                         }
                     }
                 })
@@ -44,7 +44,8 @@ module.exports = {
                         {
                             loader: 'css-loader',
                             options: {
-                                modules: true
+                                modules: true,
+                                camelCase: true
                             }
                         },
                         'less-loader'
@@ -60,8 +61,12 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, 'build')
     },
-    plugins: [
+    plugins: [         
        extractCSS,
-       extractLESS 
+       extractLESS,
+       new HtmlWebpackPlugin({
+           filename: 'index.html',
+           template: './src/static/template/index.tpl'
+       })
     ]
 }
