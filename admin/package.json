@@ -4,7 +4,8 @@
   "description": "The admin of AssLib",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "prod": "webpack -p"
   },
   "keywords": [
     "react"

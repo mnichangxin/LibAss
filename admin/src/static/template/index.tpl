@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>AssLib-Admin</title>
-    <link href="main.a30aa3b9.css" rel="stylesheet"></head>
+    </head>
     <body>
         <div id="app" style="height: 100%;"></div>  
-    <script type="text/javascript" src="bundle.js"></script></body>
+    </body>
 </html>
