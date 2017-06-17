@@ -11,11 +11,14 @@ class App extends React.Component {
     }
 
     render() {
+        const nav = <Nav></Nav>
+        const aside = <Aside></Aside>
+
         return (
             <div className={styles.container}>
-                <Nav></Nav>
+                {nav}
                 <div className={styles.page}>
-                    <Aside></Aside>                
+                    {aside}               
                 </div>
             </div>
         )
