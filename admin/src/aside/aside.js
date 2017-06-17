@@ -8,46 +8,54 @@ class Aside extends React.Component {
         this.state = {
             list: [
                 {
-                    title: 'a',
+                    title: '菜单1',
                     list: [1, 2, 3]
                 },
                 {
-                    title: 'b',
+                    title: '菜单2',
                     list: [4, 5, 6]
                 },
                 {
-                    title: 'c',
+                    title: '菜单3',
                     list: [7, 8, 9]
                 },
                 {
-                    title: 'd',
-                    list: [10, 11, 12]
+                    title: '菜单4',
+                    list: null
+                },
+                {
+                    title: '菜单5',
+                    list: null
                 }
             ]
         }
     }
 
     render() {
-        const List = <ul>
+        const List = <ul className={styles.sideNav}>
             {
                 this.state.list.map(
                     (primary, index) => {
                         return (
-                            <li key={index}>
-                                {primary.title}
-                                <ul>      
-                                    {
-                                        primary.list.map(
-                                            (second, index) => {
-                                                return (
-                                                    <ul key={index}>
-                                                        <li>second.title</li>
-                                                    </ul>
-                                                )
-                                            }
-                                        )
-                                    }
-                                </ul>
+                            <li key={index} className={styles.primaryItem}>
+                                <a className={styles.primaryTitle}>{primary.title}</a>
+                                {
+                                    !!primary.list 
+                                    ?(<ul className={styles.menu}>
+                                        {
+                                            primary.list.map(
+                                                (second, index) => {
+                                                    return (
+                                                        <li key={index} className={styles.menuList}>
+                                                            <a className={styles.menulistTitle}>second.title</a>
+                                                        </li>
+                                                    )
+                                                }
+                                            )
+                                        }
+                                    </ul>)
+                                    :(null)   
+                                }
                             </li>
                         )
                     }
