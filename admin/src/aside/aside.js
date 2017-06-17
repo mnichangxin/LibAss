@@ -8,7 +8,9 @@ class Aside extends React.Component {
 
     render() {
         return (
-            <div>This is the aside</div>
+            <div className={styles.aside}>
+
+            </div>
         )
     }
 }
