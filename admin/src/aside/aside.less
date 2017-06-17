@@ -1,6 +1,46 @@
-/* aside */
+/* aside.less */
+
+// @import '../static/font-awesome/less/variables.less';
 
 .aside {
     width: 250px;
     height: 100%;
+    border-right: 1px solid rgba(255, 255, 255, .2);
+    background-color: rgba(0, 0, 0, .2);
+    .side-nav {
+        overflow-x: hidden;
+        overflow-y: visible;
+        .primary-item {
+            border-bottom: 1px solid rgba(255, 255, 255, .2);            
+            background-color: rgba(0, 0, 0, .3);
+            cursor: pointer;
+            color: #fff;
+            .primary-title {
+                display: block;
+                padding: 15px 15px 15px 20px;
+                &:hover {
+                    background-color: rgba(0, 0, 0, .3);
+                }
+            }
+            .menu {
+                // display: none;
+                border-bottom: 1px solid rgba(255, 255, 255, .2);
+                background-color: rgba(0, 0, 0, .3);
+                &:last-child {
+                    border-bottom: 0 none;
+                }
+                .menu-list {
+                    border-bottom: 1px solid rgba(255, 255, 255, .1);
+                    &:hover {
+                        background-color: rgba(0, 0, 0, .5);
+                    }
+                    .menulist-title {
+                        display: block;
+                        padding: 12px 15px 12px 45px;
+                        font-size: 14px;     
+                    }
+                }
+            }
+        }
+    }
 }
