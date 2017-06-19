@@ -1,7 +1,5 @@
 /* aside.less */
 
-// @import '../static/font-awesome/less/variables.less';
-
 .aside {
     width: 250px;
     height: 100%;
@@ -18,6 +16,12 @@
             .primary-title {
                 display: block;
                 padding: 15px 15px 15px 20px;
+                span {
+                    float: right;
+                    position: relative;
+                    top: 2px;
+                    margin-right: 10px;
+                }
                 &:hover {
                     background-color: rgba(0, 0, 0, .3);
                 }
@@ -37,10 +41,29 @@
                     .menulist-title {
                         display: block;
                         padding: 12px 15px 12px 45px;
-                        font-size: 14px;     
+                        font-size: 15px;
+                        span {
+                            margin-right: 10px;
+                        }   
                     }
                 }
             }
         }
     }
+}
+
+// Animation
+.drop-enter {
+    opacity: 0.01;
+}
+.drop-enter.drop-enter-active {
+    opacity: 1;
+    transition: opacity 5000ms ease-in;
+}
+.drop-leave {
+    opacity: 1;
+}
+.drop-leave.drop-leave-active {
+    opacity: 0.01;
+    transition: opacity 3000ms ease-in;
 }

@@ -11,8 +11,8 @@ class App extends React.Component {
     }
 
     render() {
-        const nav = <Nav></Nav>
-        const aside = <Aside></Aside>
+        const nav = <Nav />
+        const aside = <Aside />
 
         return (
             <div className={styles.container}>
@@ -26,6 +26,6 @@ class App extends React.Component {
 }
 
 ReactDOM.render(
-    <App/>,
+    <App />,
     document.querySelector('#app')
 )
