@@ -1,5 +1,4 @@
 import React from 'react'
-import {CSSTransitionGroup} from 'react-transition-group'
 import {Icon} from 'react-fa'
 import styles from './aside.less'
 
@@ -64,25 +63,19 @@ class Aside extends React.Component {
                                         !!primary.list && (!primary.isDown?<Icon name="angle-left"/>:<Icon name="angle-down"/>)
                                     }
                                 </a>
-                                {primary.isDown && <CSSTransitionGroup
-                                    component="div"
-                                    transitionName="drop"
-                                    transitionEnterTimeout={5000}
-                                    transitionLeaveTimeout={3000}>
-                                    <ul className={styles.menu}>
-                                        {   
-                                            primary.list.map(
-                                                (second, index) => {
-                                                    return (
-                                                        <li key={index} className={styles.menuList}>
-                                                            <a className={styles.menulistTitle}><Icon name="angle-right"/>{second}</a>
-                                                        </li>
-                                                    )
-                                                }
-                                            )
-                                        }
-                                    </ul>
-                                </CSSTransitionGroup>}
+                                {primary.isDown && <ul className={styles.menu}>
+                                    {   
+                                        primary.list.map(
+                                            (second, index) => {
+                                                return (
+                                                    <li key={index} className={styles.menuList}>
+                                                        <a className={styles.menulistTitle}><Icon name="angle-right"/>{second}</a>
+                                                    </li>
+                                                )
+                                            }
+                                        )
+                                    }
+                                </ul>}
                             </li>
                         )
                     }
