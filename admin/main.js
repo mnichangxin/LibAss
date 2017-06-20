@@ -4,7 +4,8 @@ import styles from './src/main/main.less'
 
 import {Nav} from './src/nav/nav.js'
 import {Aside} from './src/aside/aside.js'
-import {Section} from './src/section/section'
+import {Comp} from './src/comp/comp.js'
+
 
 class App extends React.Component {
     constructor(props) {
@@ -14,14 +15,14 @@ class App extends React.Component {
     render() {
         const nav = <Nav />
         const aside = <Aside />
-        const section = <Section />
+        const comp = <Comp />
 
         return (
             <div className={styles.container}>
                 {nav}
                 <div className={styles.page}>
                     <div className={styles.asideWrap}>{aside}</div>
-                    <div className={styles.sectionWrap}>{section}</div>              
+                    <div className={styles.sectionWrap}>{comp}</div>              
                 </div>
             </div>
         )
