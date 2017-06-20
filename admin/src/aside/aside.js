@@ -1,4 +1,5 @@
 import React from 'react'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import {Icon} from 'react-fa'
 import styles from './aside.less'
 
@@ -40,7 +41,7 @@ class Aside extends React.Component {
     }
 
     handleDrop(index) {
-        let list = this.state.list;
+        let list = this.state.list
 
         if (!!list[index].list) {
             list[index].isDown = !list[index].isDown
@@ -92,3 +93,137 @@ class Aside extends React.Component {
 }
 
 export {Aside}
+
+// const Home = () => (
+//   <div>
+//     <h2>Home</h2>
+//   </div>
+// )
+
+
+// class Home extends React.Component {
+//     constructor() {
+//         super()
+//     }
+
+//     render() {
+//         return (
+//             <div>
+//                 <h2>Home</h2>
+//             </div>
+//         )
+//     }
+// }
+
+// class About extends React.Component {
+//     constructor() {
+//         super()
+//     }
+
+//     render() {
+//         return (
+//             <div>
+//                 <h2>About</h2>
+//             </div>
+//         )
+//     }
+// }
+
+// class Topic extends React.Component {
+//     constructor(props) {
+//         super(props)
+
+//         this.state = {
+//             topicId: props.match.params.topicId
+//         }
+//     }
+
+//     render() {
+//         return (
+//             <div>
+//                 <h3>{this.state.topicId}</h3>
+//             </div>
+//         )
+//     }
+// }
+
+// class Topics extends React.Component {
+//     constructor(props) {
+//         super(props)
+
+//         this.state = {
+//             url: props.match.url
+//         }
+//     }
+
+//     render() {
+//         return (
+//             <div>
+//                 <h2>Topics</h2>
+//                 <ul>
+//                     <li>
+//                         <Link to={`${this.state.url}/rendering`}>Rendering with React</Link>
+//                     </li>
+//                     <li>
+//                         <Link to={`${this.state.url}/components`}>Components</Link>
+//                     </li>
+//                     <li>
+//                         <Link to={`${this.state.url}/props-v-state`}>Props v. State</Link>
+//                     </li>
+//                 </ul>
+
+//                 <Route path={`${this.state.url}/:topicId`} component={Topic}/>
+//                 <Route exact path={this.state.url} render={() => (
+//                     <h3>Please select a topic.</h3>
+//                 )} />
+//             </div>
+//         )
+//     }
+// }
+
+// class Aside extends React.Component {
+//     constructor(props) {
+//         super(props)
+//     }
+
+//     render() {
+//         return (
+//             <Router>
+//                 <div>
+//                     <ul>
+//                         <li><Link to="/">Home</Link></li>
+//                         <li><Link to="/about">About</Link></li>
+//                         <li><Link to="/topics">Topics</Link></li>
+//                     </ul>
+
+//                     <hr/>
+
+//                     <Route exact path="/" component={Home} />
+//                     <Route path="/about" component={About} />
+//                     <Route path="/topics" component={Topics} />
+//                 </div>
+//             </Router>
+//         )
+//     }
+// }
+
+
+// // const Aside = () => (
+// //     <Router>
+// //         <div>
+// //             <ul>
+// //                 <li><Link to="/">Home</Link></li>
+// //                 <li><Link to="/about">About</Link></li>
+// //                 <li><Link to="/topics">Topics</Link></li>
+// //             </ul>
+
+// //             <hr/>
+
+// //             <Route exact path="/" component={Home} />
+// //             <Route path="/about" component={About} />
+// //             <Route path="/topics" component={Topics} />
+// //         </div>
+// //     </Router>
+// // )
+
+// export {Aside}
