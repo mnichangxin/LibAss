@@ -12,7 +12,7 @@ const extractLESS = new ExtractTextPlugin({
 })
 
 module.exports = {
-    entry: './main.js',
+    entry: ['./main.js'],
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'build')
@@ -81,7 +81,14 @@ module.exports = {
         ]
     },
     devServer: {
-        contentBase: path.resolve(__dirname, 'build')
+        contentBase: path.resolve(__dirname, 'build'),
+        historyApiFallback: true,
+        proxy: {
+            '*': {
+                target: 'https://85293008.qcloud.la',
+                changeOrigin: true
+            }
+        }
     },
     plugins: [         
        extractCSS,

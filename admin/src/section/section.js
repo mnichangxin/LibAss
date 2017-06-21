@@ -8,7 +8,8 @@ class Section extends React.Component {
 
         this.state = {
             section_title: props.section_title,
-            section_content: props.section_content
+            box_title: props.box_title,
+            box_content: props.box_content
         }
     }
 
@@ -17,7 +18,14 @@ class Section extends React.Component {
             <div className={styles.section}>
                 <div className={styles.sectionMain}>
                     <div className={styles.sectionTitle}>{this.state.section_title}</div>
-                    <div className={styles.sectionContent}>{this.state.section_content}</div>
+                    <div className={styles.sectionContent}>
+                        <div className={styles.boxTitle}>
+                            {this.state.box_title}
+                        </div>
+                        <div className = {styles.boxContent}>
+                            {this.state.box_content}
+                        </div>
+                    </div>
                 </div>
             </div>
         )
