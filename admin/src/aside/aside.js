@@ -9,10 +9,29 @@ class Aside extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = {
+        this.state = { 
             list: [
                 {
-                    title: '菜单1',
+                    title: '书籍管理',
+                    path: '',
+                    component: null,
+                    list: [{
+                        text: '书籍信息',
+                        path: 'one',
+                        component: Comp
+                    }, {
+                        text: '书籍上架',
+                        path: 'two',
+                        component: Comp
+                    }, {
+                        text: '',
+                        path: '书籍下架',
+                        component: Comp
+                    }],
+                    isDown: false
+                },
+                {
+                    title: '借书管理',
                     path: '',
                     component: null,
                     list: [{
@@ -31,26 +50,7 @@ class Aside extends React.Component {
                     isDown: false
                 },
                 {
-                    title: '菜单2',
-                    path: '',
-                    component: null,
-                    list: [{
-                        text: '1',
-                        path: 'one',
-                        component: Comp
-                    }, {
-                        text: '2',
-                        path: 'two',
-                        component: Comp
-                    }, {
-                        text: '3',
-                        path: 'three',
-                        component: Comp
-                    }],
-                    isDown: false
-                },
-                {
-                    title: '菜单3',
+                    title: '订单管理',
                     path: 'four',
                     component: Comp,
                     list: null,
