@@ -23,28 +23,20 @@ class Aside extends React.Component {
                         text: '书籍上架',
                         path: 'two',
                         component: Comp
-                    }, {
-                        text: '',
-                        path: '书籍下架',
-                        component: Comp
                     }],
                     isDown: false
                 },
                 {
-                    title: '借书管理',
+                    title: '预约借书',
                     path: '',
                     component: null,
                     list: [{
-                        text: '1',
+                        text: '预约管理',
                         path: 'one',
                         component: Comp
                     }, {
-                        text: '2',
+                        text: '借书管理',
                         path: 'two',
-                        component: Comp
-                    }, {
-                        text: '3',
-                        path: 'three',
                         component: Comp
                     }],
                     isDown: false
