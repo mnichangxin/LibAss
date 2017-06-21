@@ -63,6 +63,7 @@ module.exports = {
                 use: {
                     loader: 'url-loader',
                     options: {
+                        name: 'static/[name].[ext]',
                         limit: 10000,
                         mimetype: 'application/font-woff'
                     }
@@ -71,7 +72,10 @@ module.exports = {
             {
                 test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 use: {
-                    loader: 'file-loader'
+                    loader: 'file-loader',
+                    options: {
+                        name: 'static/[name].[ext]'
+                    }
                 }
             }
         ]
