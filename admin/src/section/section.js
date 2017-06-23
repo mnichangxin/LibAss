@@ -13,6 +13,14 @@ class Section extends React.Component {
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+        if('box_content' in nextProps) {
+            this.setState({
+                box_content: nextProps.box_content
+            })
+        }
+    }
+
     render() {
         return (
             <div className={styles.section}>
