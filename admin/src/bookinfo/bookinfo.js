@@ -4,7 +4,6 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import styles from './bookinfo.less'
 
 import {Section} from '../section/section.js'
-
 import {BookEdit} from '../bookedit/bookedit.js'
 
 class BookInfo extends React.Component {
@@ -12,32 +11,7 @@ class BookInfo extends React.Component {
         super(props)
 
         this.state = {
-            books: [
-                // {
-                //     bookId: '0001',
-                //     imgSrc: '../static/images/book1.jpg',
-                //     bookTitle: '百年孤独',
-                //     bookAuthor: 'xiaoli',
-                //     bookCategory: '小说',
-                //     bookHolding: 10
-                // },
-                // {
-                //     bookId: '0001',
-                //     imgSrc: '../static/images/book1.jpg',
-                //     bookTitle: '百年孤独',
-                //     bookAuthor: 'xiaozhang',
-                //     bookCategory: '小说',
-                //     bookHolding: 10
-                // },
-                // {
-                //     bookId: '0001',
-                //     imgSrc: '../static/images/book1.jpg',
-                //     bookTitle: '百年孤独',
-                //     bookAuthor: 'xiaowang',
-                //     bookCategory: '小说',
-                //     bookHolding: 10
-                // }
-            ]
+            books: []
         }
 
         this.handleDel = this.handleDel.bind(this)
@@ -67,8 +41,8 @@ class BookInfo extends React.Component {
     render() {
         const section_title = '书籍管理'
         const box_title = '书籍信息'
-        const box_content = <Router>
-            <div>
+        const box_content = <div>
+            <Route path="/bookinfo/edit">
                 <div className={styles.body}>
                     <table className={styles.table}>
                         <thead>
@@ -92,12 +66,8 @@ class BookInfo extends React.Component {
                                             <td>{book.bookCategory}</td>
                                             <td>{book.bookHolding}</td>
                                             <td>
-                                                {/*<div className={styles.edit}>编辑</div>*/}
                                                 <Link
-                                                    to={{
-                                                        pathname: '/edit',
-                                                        search: '?id=' + book.bookId
-                                                    }} 
+                                                    to = '/bookinfo/edit/id'
                                                     className={styles.edit}>编辑</Link>
                                                 <div className={styles.del} onClick={() => this.handleDel(index)}>删除</div>
                                             </td>
@@ -108,9 +78,9 @@ class BookInfo extends React.Component {
                         </tbody>
                     </table>
                 </div>
-                <Route path="/edit" component={BookEdit} />
-            </div>
-        </Router>
+            </Route>
+            <Route exact path="/bookinfo/edit/id" component={BookEdit} />
+        </div>
 
         return (
             <Section 
