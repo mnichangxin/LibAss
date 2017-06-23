@@ -1,11 +1,11 @@
 import React from 'react'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import {Icon} from 'react-fa'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import styles from './page.less'
 
 import {Aside} from '../aside/aside.js'
 import {Section} from '../section/section.js'
 import {BookInfo} from '../bookinfo/bookinfo.js'
+import {BookEdit} from '../bookedit/bookedit.js'
 import {BookShelves} from '../bookshelves/bookshelves.js'
 
 class Page extends React.Component {
@@ -14,6 +14,10 @@ class Page extends React.Component {
 
         this.state = {
             routes: [
+                {
+                    path: '/',
+                    component: BookInfo
+                },
                 {
                     path: '/bookinfo',
                     component: BookInfo
@@ -53,7 +57,7 @@ class Page extends React.Component {
                     <div className={styles.sectionWrap}>
                         {
                             this.state.routes.map((route, index) => {
-                                return <Route path={route.path} component={route.component} key={index}></Route>
+                                return <Route exact path={route.path} component={route.component} key={index}></Route>
                             })   
                         }      
                     </div>    

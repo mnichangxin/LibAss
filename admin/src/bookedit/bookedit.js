@@ -14,6 +14,8 @@ class BookEdit extends React.Component {
         const box_title = '图书编辑'
         const box_content = <div>edit</div>
 
+        console.log(this.props.match)
+
         return (
             <Section 
                 section_title={section_title} 
