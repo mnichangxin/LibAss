@@ -84,7 +84,7 @@ module.exports = {
         contentBase: path.resolve(__dirname, 'build'),
         historyApiFallback: true,
         proxy: {
-            '*': {
+            '/wxapp': {
                 target: 'https://85293008.qcloud.la',
                 changeOrigin: true
             }
