@@ -22,6 +22,10 @@ class Page extends React.Component {
                     path: '/bookinfo',
                     component: BookInfo
                 },
+                // {
+                //     path: '/bookinfo/edit',
+                //     component: BookEdit
+                // },
                 {
                     path: '/bookshelves',
                     component: BookShelves
@@ -59,7 +63,8 @@ class Page extends React.Component {
                             this.state.routes.map((route, index) => {
                                 return <Route exact path={route.path} component={route.component} key={index}></Route>
                             })   
-                        }      
+                        }   
+                        <Route path='/bookinfo/edit/id/**' component={BookEdit}></Route>   
                     </div>    
                 </div>
             </Router>

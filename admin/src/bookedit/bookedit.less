@@ -1,1 +1,78 @@
 /* bookedit.less */
+
+textarea, input, select {
+    min-height: 30px;    
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+textarea:focus, input:focus {
+    border: 1px solid #22A3CE;
+}
+
+.form {
+    color: #fff;
+    p, .section, .btn {
+        margin-top: 30px;
+    }
+    p:first-child {
+        margin-top: 0;
+    }
+    textarea, input, select {
+        margin-left: 10px;
+    }
+    textarea {
+        padding: 10px;
+        width: 80%;
+        height: 200px;
+        vertical-align: middle;
+        resize: none;
+    }
+    .book-id, .book-title, .book-author, .book-category {
+        width: 25%;
+    }
+    .book-title, .book-author, .book-publish {
+        margin-left: 5%;
+    }
+    .book-guidance, .book-review {
+        height: 200px;
+        line-height: 200px;
+        label {
+            vertical-align: middle;
+        }
+    }
+    .section {
+        overflow: hidden;
+    }
+    .book-left {
+        float: left;
+        width: 60%;
+    }
+    .img-right {
+        float: right;
+        width: 30%;
+        .img {
+            width: 80%;
+            height: 80%;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .submit {
+        margin: 0 auto;
+        width: 70px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: #eea236;
+        background-color: rgba(240, 173, 78, 0.45);
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+

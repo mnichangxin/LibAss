@@ -42,7 +42,7 @@ class BookInfo extends React.Component {
         const section_title = '书籍管理'
         const box_title = '书籍信息'
         const box_content = <div>
-            <Route path="/bookinfo/edit">
+            <Route exact path='/bookinfo'>
                 <div className={styles.body}>
                     <table className={styles.table}>
                         <thead>
@@ -67,7 +67,7 @@ class BookInfo extends React.Component {
                                             <td>{book.bookHolding}</td>
                                             <td>
                                                 <Link
-                                                    to = '/bookinfo/edit/id'
+                                                    to = {'/bookinfo/edit/id/' + book.bookId} 
                                                     className={styles.edit}>编辑</Link>
                                                 <div className={styles.del} onClick={() => this.handleDel(index)}>删除</div>
                                             </td>
@@ -76,10 +76,9 @@ class BookInfo extends React.Component {
                                 })
                             }
                         </tbody>
-                    </table>
+                    </table>  
                 </div>
             </Route>
-            <Route exact path="/bookinfo/edit/id" component={BookEdit} />
         </div>
 
         return (
