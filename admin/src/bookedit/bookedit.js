@@ -8,11 +8,21 @@ class BookEdit extends React.Component {
     constructor(props) {
         super(props)
 
-        this.data = {
+        this.state = {
             bookId: this.props.match.params[0],
             book: {
                 bookId: '0001',
-                imgSrc: ''
+                imgSrc: 'http://www.1tong.com/uploads/wallpaper/landscapes/273-1-1920x1200.jpg',
+                bookTitle: '百年孤独',
+                bookAuthor: '马尔克斯',
+                bookPublish: '南海出版公司',
+                bookCategory: {
+                    primary: '文学',
+                    second: '小说',
+                    third: '言情'
+                },
+                bookGuidance: '多年以后...',
+                bookReview: '创世纪之后...'
             }
         }
     }
@@ -22,9 +32,9 @@ class BookEdit extends React.Component {
         const box_title = '图书编辑'
         const box_content = <div className={styles.form}>
             <p>
-                <span className={styles.bookId}><label>ID：</label><input type="text" placeholder="ID" /></span>
-                <span className={styles.bookTitle}><label>名称：</label><input type="text" placeholder="图书名称" /></span>
-                <span className={styles.bookAuthor}><label>作者：</label><input type="text" placeholder="图书作者" /></span>
+                <span className={styles.bookId}><label>ID：</label><input type="text" defaultValue={this.state.book.bookId} /></span>
+                <span className={styles.bookTitle}><label>名称：</label><input type="text" defaultValue={this.state.book.bookTitle} /></span>
+                <span className={styles.bookAuthor}><label>作者：</label><input type="text" defaultValue={this.state.book.bookAuthor} /></span>
             </p>
             <p>
                 <span className={styles.bookCategory}>
@@ -45,23 +55,25 @@ class BookEdit extends React.Component {
                         <option>玄幻</option>
                     </select>
                 </span>
-                <span className={styles.bookPublish}><label>出版信息：</label><input type="text" placeholder="出版信息" /></span>
+                <span className={styles.bookPublish}><label>出版信息：</label><input type="text" defaultValue={this.state.book.bookPublish} /></span>
             </p>
             <div className={styles.section}>
                 <div className={styles.bookLeft}>
                     <p className={styles.bookGuidance}>
-                        <label>导读：</label><textarea placeholder="导读"></textarea>
+                        <label>导读：</label><textarea defaultValue={this.state.book.bookGuidance}></textarea>
                     </p>
                     <p className={styles.bookReview}>
-                        <label>书评：</label><textarea placeholder="书评"></textarea>
+                        <label>书评：</label><textarea defaultValue={this.state.book.bookReview}></textarea>
                     </p>
                 </div>
                 <div className={styles.imgRight}>
                     <div className={styles.img}>
-                        <img src="http://www.1tong.com/uploads/wallpaper/landscapes/273-1-1920x1200.jpg" />
+                        <img src={this.state.book.imgSrc} />
                     </div>
-                    <div>
+                    <div className={styles.fileWrap}>
+                        <div className={styles.fileButton}>选择</div>
                         <input type="file" />
+                        <span className={styles.fileName}>1.jpg</span>
                     </div> 
                 </div>
             </div>

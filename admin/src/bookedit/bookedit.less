@@ -4,13 +4,14 @@ textarea, input, select {
     min-height: 30px;    
     border: 1px solid rgba(255, 255, 255, 0.25);
     background-color: rgba(0, 0, 0, 0.25);
-    color: #fff;
+    color: #C4C4C4;
     padding-left: 6px;
     padding-right: 6px;
 }
 
 textarea:focus, input:focus {
     border: 1px solid #22A3CE;
+    color: #fff;
 }
 
 .form {
@@ -60,6 +61,29 @@ textarea:focus, input:focus {
             img {
                 width: 100%;
                 height: 100%;
+            }
+        }
+        .file-wrap {
+            margin-top: 10px;
+            .file-button {
+                position: absolute;
+                width: 70px;
+                height: 30px;
+                line-height: 30px;
+                border-radius: #eea236;
+                background-color: rgba(240, 173, 78, 0.45);
+                text-align: center;
+                color: #fff;
+                cursor: pointer;
+            }
+            input {
+                margin-left: 0;
+                width: 70px;
+                height: 30px;
+                opacity: 0;
+            }
+            .file-name {
+                margin-left: 10px;
             }
         }
     }
