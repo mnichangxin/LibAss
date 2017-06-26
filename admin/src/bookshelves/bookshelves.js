@@ -15,8 +15,6 @@ class BookShelves extends React.Component {
         const box_title = '书籍上架'
         const box_content = '书籍上架'
 
-        console.log(this.props.match)
-
         return (
             <Section 
                 section_title={section_title} 
