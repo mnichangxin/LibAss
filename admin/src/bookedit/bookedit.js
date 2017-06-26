@@ -17,14 +17,51 @@ class BookEdit extends React.Component {
                 bookAuthor: '马尔克斯',
                 bookPublish: '南海出版公司',
                 bookCategory: {
-                    primary: '文学',
+                    primary: '社会',
                     second: '小说',
                     third: '言情'
                 },
                 bookGuidance: '多年以后...',
                 bookReview: '创世纪之后...'
-            }
+            },
+            filename: '',
+            img_base64: ''
         }
+
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    compentDidMount() {
+        /// 请求图书详情
+        // fetch('/wxapp/soft/Linkage_books.action')
+        //     .then((res) => {
+        //         return res.json()
+        //     })
+        //     .then((data) => {
+        //         this.setState({
+        //             books: data
+        //         })
+        //     })
+        //     .catch((err) => {
+        //         return err
+        //     })
+    }
+
+    handleChange(e) {
+        const file = e.target.files[0]
+        
+        let reader = new FileReader()
+        reader.readAsDataURL(file)
+
+        reader.onload = (event) => {
+            this.setState({
+                img_base64: event.target.result
+            })
+        }
+
+        this.setState({
+            filename: file.name
+        })
     }
 
     render() {
@@ -39,20 +76,20 @@ class BookEdit extends React.Component {
             <p>
                 <span className={styles.bookCategory}>
                     <label>分类：</label>
-                    <select>
-                        <option>文学</option>
-                        <option>科学</option>
-                        <option>社会</option>
+                    <select defaultValue={this.state.book.bookCategory.primary}>
+                        <option value="文学">文学</option>
+                        <option value="科学">科学</option>
+                        <option value="社会">社会</option>
                     </select>
-                    <select>
-                        <option>小说</option>
-                        <option>社科</option>
-                        <option>名著</option>
+                    <select defaultValue={this.state.book.bookCategory.second}>
+                        <option value="小说">小说</option>
+                        <option value="社科">社科</option>
+                        <option value="名著">名著</option>
                     </select>
-                    <select>
-                        <option>校园</option>
-                        <option>言情</option>
-                        <option>玄幻</option>
+                    <select defaultValue={this.state.book.bookCategory.third}>
+                        <option value="校园">校园</option>
+                        <option value="言情">言情</option>
+                        <option value="玄幻">玄幻</option>
                     </select>
                 </span>
                 <span className={styles.bookPublish}><label>出版信息：</label><input type="text" defaultValue={this.state.book.bookPublish} /></span>
@@ -72,8 +109,8 @@ class BookEdit extends React.Component {
                     </div>
                     <div className={styles.fileWrap}>
                         <div className={styles.fileButton}>选择</div>
-                        <input type="file" />
-                        <span className={styles.fileName}>1.jpg</span>
+                        <input type="file" onChange={(e) => this.handleChange(e)} />
+                        <span className={styles.fileName}>{this.state.filename}</span>
                     </div> 
                 </div>
             </div>
