@@ -65,13 +65,12 @@ Page({
   // 扫码
   scanTap: function () {
     wx.scanCode({
-      onlyFromCamera: true,
       success: function (res) {
         // var bookId = JSON.parse(res.result).bookId;
-        console.log(res.result)
-      },
-      fail: function() {
-        console.log('fail!')
+        console.log(res)
+        wx.switchTab({
+          url: '../me/me'
+        })
       }
     });
   },
