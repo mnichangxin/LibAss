@@ -7,6 +7,8 @@ import {Section} from '../section/section.js'
 import {BookInfo} from '../bookinfo/bookinfo.js'
 import {BookEdit} from '../bookedit/bookedit.js'
 import {BookShelves} from '../bookshelves/bookshelves.js'
+import {Reserve} from '../reserve/reserve.js'
+import {Borrow} from '../borrow/borrow.js'
 
 class Page extends React.Component {
     constructor(props) {
@@ -22,21 +24,17 @@ class Page extends React.Component {
                     path: '/bookinfo',
                     component: BookInfo
                 },
-                // {
-                //     path: '/bookinfo/edit',
-                //     component: BookEdit
-                // },
                 {
                     path: '/bookshelves',
                     component: BookShelves
                 },
                 {
-                    path: '/one',
-                    component: BookInfo
+                    path: '/reserve',
+                    component: Reserve
                 },
                 {
-                    path: '/two',
-                    component: BookInfo
+                    path: '/borrow',
+                    component: Borrow
                 },
                 {
                     path: '/three',
