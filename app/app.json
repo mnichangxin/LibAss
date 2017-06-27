@@ -16,7 +16,8 @@
     "pages/set/set",
     "pages/account/account",
     "pages/relationship/relationship",
-    "pages/publish/publish"
+    "pages/publish/publish",
+    "pages/pay/pay"
   ],
   "window": {
     "backgroundTextStyle": "light",

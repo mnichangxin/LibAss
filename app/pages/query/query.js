@@ -17,14 +17,15 @@ Page({
     var that = this;
 
     that.setData({
-      thirdId: options.id,
+      thirdId: options.thirdId,
       thirdName: options.thirdName
     });
 
     var url = 'https://85293008.qcloud.la/wxapp/soft/Linkage_books.action';
 
+
     pageLoad.pageLoad(url, that, {
-      thridId: that.data.thirdId
+      thirdId: that.data.thirdId
     }, true);
   },
 

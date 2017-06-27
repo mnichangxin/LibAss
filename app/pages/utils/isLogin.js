@@ -22,23 +22,28 @@ function isLogin(callback, error) {
                 } else {
                   console.log('登录失败，session不一致');
                   console.log(res);
+                  error();
                 }
               },
               fail: function () {
                 console.log('发送请求到服务端失败');
+                error();
               }
             });
           } else {
             console.log('缓存中无Session，登录失败');
+            error();
           }
         },
         fail: function() {
           console.log('缓存中无Session，登录失败');
+          error();
         }
       })
     },
     fail: function() {
       console.log('需要重新拉取登录态');
+      error();
     }
   });
 }

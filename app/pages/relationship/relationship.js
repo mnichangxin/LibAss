@@ -73,9 +73,9 @@ Page({
     }
   },
 
-  // 时间处理函数
+  // 事件处理函数
   onLoad: function (options) {
-  
+    
   },
 
   // 评论组件

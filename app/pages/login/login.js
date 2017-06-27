@@ -112,8 +112,8 @@ Page({
             key: 'token',
             data: res.data.token
           });
-          appInstance.globalData.phone = res.data.phone; // 把手机号存入App数据中
-          console.log(res.data.phone);
+          // appInstance.globalData.phone = res.data.phone; // 把手机号存入App数据中
+          console.log(res.data.message);
           showTip('登录成功');
           redirect();
         } else {
@@ -161,7 +161,7 @@ Page({
             success: function (res) {
               if (res.data.code == 0 ) {
                 appInstance.globalData.phone = reg_data.username; // 把手机号存入App数据中
-                console.log(appInstance.globalData.userInfo.phone);
+                // console.log(appInstance.globalData.userInfo.phone);
                 showTip('注册成功');
                 redirect();
               } else {

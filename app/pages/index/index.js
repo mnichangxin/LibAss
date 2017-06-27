@@ -28,8 +28,6 @@ function pageLoad(url, scope, object) {
           book: book
         });
 
-        console.log(page);
-
         page++;
       }
     }
@@ -69,7 +67,11 @@ Page({
     wx.scanCode({
       onlyFromCamera: true,
       success: function (res) {
-        var bookId = JSON.parse(res.result).bookId;
+        // var bookId = JSON.parse(res.result).bookId;
+        console.log(res.result)
+      },
+      fail: function() {
+        console.log('fail!')
       }
     });
   },

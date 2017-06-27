@@ -22,10 +22,12 @@ function pageLoad(url, scope, object, isPage) {
       data: Object.assign({
         token: getToken.getToken(),
         page: page,
-        pageSize: 1
+        pageSize: 5
       }, object),
       success: function (res) {
         var book = scope.data.book;
+
+        console.log(res);
 
         if (res.data) {
           book = book.concat(res.data); // 将下一页数据加到队列中

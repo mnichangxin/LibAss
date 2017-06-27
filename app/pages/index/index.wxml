@@ -26,10 +26,6 @@
         <image src="../static/icon/scan.png"></image>
         <text>扫一扫</text>
       </view>
-      <!--<navigator class="book-reverse" url="../reverse/reverse" hover-class="none">
-        <image src="../static/icon/reverse.png"></image>
-        <text>在线预订</text>
-      </navigator>-->
       <navigator class="book-navigation" url="../navigation/navigation" hover-class="none">
         <image src="../static/icon/navigation.png"></image>
         <text>图书导航</text>
