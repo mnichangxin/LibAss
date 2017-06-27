@@ -26,10 +26,10 @@ class Aside extends React.Component {
                     path: '',
                     list: [{
                         text: '预约管理',
-                        path: '/one'
+                        path: '/reserve'
                     }, {
                         text: '借书管理',
-                        path: '/two'
+                        path: '/borrow'
                     }],
                     isDown: false
                 },
