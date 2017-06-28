@@ -12,6 +12,21 @@ var showTip = function (title) {
   });
 };
 
+// 随机ID生成函数
+var randomString = function (len) {
+　　len = len || 32;
+
+　　var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';
+　　var maxPos = $chars.length;
+　　var pwd = '';
+
+　　for (var i = 0; i < len; i++) {
+      pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+　　}
+
+　　return pwd;
+};
+
 Page({
   // 页面初始数据
   data: {
@@ -27,6 +42,35 @@ Page({
     pay_status: false,
     keyword_status: ['', '', '', '', '', ''],
     keyword_queue: []
+  },
+
+  // 支付函数
+  pay: function() {
+    var that = this;
+
+    wx.request({
+      url: 'https://85293008.qcloud.la/wxapp/soft/Reserve_order.action',
+      method: 'POST',
+      data: {
+        token: getToken.getToken(),
+        bookId: that.data.book.bookId,
+        payId: randomString(8),
+        date: that.data.date_start,
+        time: that.data.data_time
+      },
+      success: function (res) {
+        showTip(res.data.message);
+
+        if (res.data.data) {
+          setTimeout(function () {
+            wx.switchTab({
+              url: '../index/index'
+            });
+          }, 1000);
+        }
+      }
+    });
+
   },
 
   // 事件处理函数
@@ -103,28 +147,7 @@ Page({
     console.log(this.data.keyword_status)
 
     if (keyword_queue.length == 6) {
-      wx.request({
-        url: 'https://85293008.qcloud.la/wxapp/soft/Reserve_order.action',
-        method: 'POST',
-        data: {
-          token: getToken.getToken(),
-          bookId: that.data.book.bookId,
-          payId: '0001',
-          date: that.data.date_start,
-          time: that.data.data_time
-        },
-        success: function (res) {
-          showTip(res.data.message);
-
-          if (res.data.data) {
-            setTimeout(function () {
-              wx.switchTab({
-                url: '../index/index'
-              });
-            }, 1000);   
-          }                  
-        }
-      });
+      this.pay(); 
     }
   },
   handleKey2: function () {
@@ -150,12 +173,7 @@ Page({
     console.log(this.data.keyword_status)
 
     if (keyword_queue.length == 6) {
-      showTip('支付成功！');
-      setTimeout(function () {
-        wx.switchTab({
-          url: '../index/index'
-        });
-      }, 1000)
+      this.pay();
     }
   },
   handleKey3: function () {
@@ -181,12 +199,7 @@ Page({
     console.log(this.data.keyword_status)
 
     if (keyword_queue.length == 6) {
-      showTip('支付成功！');
-      setTimeout(function () {
-        wx.switchTab({
-          url: '../index/index'
-        });
-      }, 1000)
+      this.pay();
     }
   },
   handleKey4: function () {
@@ -212,12 +225,7 @@ Page({
     console.log(this.data.keyword_status)
 
     if (keyword_queue.length == 6) {
-      showTip('支付成功！');
-      setTimeout(function () {
-        wx.switchTab({
-          url: '../index/index'
-        });
-      }, 1000)
+      this.pay();
     }
   },
   handleKey5: function () {
@@ -243,12 +251,7 @@ Page({
     console.log(this.data.keyword_status)
 
     if (keyword_queue.length == 6) {
-      showTip('支付成功！');
-      setTimeout(function () {
-        wx.switchTab({
-          url: '../index/index'
-        });
-      }, 1000)
+      this.pay();
     }
   },
   handleKey6: function () {
@@ -275,11 +278,7 @@ Page({
 
     if (keyword_queue.length == 6) {
       showTip('支付成功！');
-      setTimeout(function () {
-        wx.switchTab({
-          url: '../index/index'
-        });
-      }, 1000)
+      this.pay();
     }
   },
   handleKey7: function () {
@@ -305,12 +304,7 @@ Page({
     console.log(this.data.keyword_status)
 
     if (keyword_queue.length == 6) {
-      showTip('支付成功！');
-      setTimeout(function () {
-        wx.switchTab({
-          url: '../index/index'
-        });
-      }, 1000)
+      this.pay();
     }
   },
   handleKey8: function () {
@@ -336,12 +330,7 @@ Page({
     console.log(this.data.keyword_status)
 
     if (keyword_queue.length == 6) {
-      showTip('支付成功！');
-      setTimeout(function () {
-        wx.switchTab({
-          url: '../index/index'
-        });
-      }, 1000)
+      this.pay();
     }
   },
   handleKey9: function () {
@@ -367,12 +356,7 @@ Page({
     console.log(this.data.keyword_status)
 
     if (keyword_queue.length == 6) {
-      showTip('支付成功！');
-      setTimeout(function () {
-        wx.switchTab({
-          url: '../index/index'
-        });
-      }, 1000)
+      this.pay();
     }
   },
   handleKey0: function () {
@@ -398,12 +382,7 @@ Page({
     console.log(this.data.keyword_status)
 
     if (keyword_queue.length == 6) {
-      showTip('支付成功！');
-      setTimeout(function() {
-        wx.switchTab({
-          url: '../index/index'
-        });
-      }, 1000)
+      this.pay();
     }
   },
   handleClear: function() {
