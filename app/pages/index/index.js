@@ -11,6 +11,21 @@ var showTip = function (title) {
   });
 };
 
+// 随机ID生成函数
+var randomString = function(len) {
+　　len = len || 32;
+
+　　var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';
+　　var maxPos = $chars.length;
+　　var pwd = '';
+
+　　for (var i = 0; i < len; i++) {
+  　　　　pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+　　}
+
+　　return pwd;
+}
+
 var page = 1; // 初始页码
 
 // 分页
@@ -78,7 +93,9 @@ Page({
       success: function(res) {
         console.log(res);
         var result = res.result;
-
+        wx.switchTab({
+          url: '../me/me'
+        });
         if (result.doWhat == 'js') {
           wx.request({
             url: 'https://85293008.qcloud.la/wxapp/soft/qrcode_js.action',
@@ -91,18 +108,18 @@ Page({
               if(res.data.code == 0) {
                 showTip(res.data.message);
               } else {
-                var payId = ''; // 随机字符串
+                var payId = randomString(8); // 随机字符串
 
                 wx.navigateTo({
                   url: '../pay/pay?token=' + getToken.getToken() + '&rfid=' + result.rfid + '&payId=' + payId 
                 });
               }
             }
-          })
-        } else if (result.doWhat == 'cx') {
-         wx.navigateTo({
-           url: '../detail/detail?bookId=' + result.bookId
-         });
+          });
+        } else if(result.doWhat == 'cx') {
+          wx.navigateTo({
+            url: '../detail/detail?bookId=' + result.bookId
+          });
         }
       },
       fail: function() {

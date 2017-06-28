@@ -1,1 +1,129 @@
 /* pay.wxss */
+
+.borrow-book {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  width: 100%;
+  line-height: 80rpx;
+  background: #fff;
+}
+.borrow-book text {
+  font-size: 12pt;
+  color: #D0D0D0;
+}
+.btn {
+  margin-top: 50rpx;
+  width: 80%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background: #359519;
+  border-radius: 8rpx;
+  color: #fff;
+  font-size: 13pt;
+}
+
+.pay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+}
+.inputboard {
+  position: fixed;
+  top: 50rpx;
+  left: 50%;
+  width: 80%;
+  height: 380rpx;
+  transform: translate(-50%, 0);
+  background: #fff;
+  font-size: 12pt;
+}
+.inputboard-title {
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 2rpx solid #DDDDDD;
+  text-align: center;
+}
+.inputboard-title image {
+  position: absolute;
+  left: 25rpx;
+  top: 25rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.inputboard-shop {
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #DDDDDD;
+}
+.shop-name, .shop-money {
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.shop-money {
+  font-size: 14pt;
+  font-weight: bold;
+}
+.inputboard-input {
+  padding: 20rpx 0;
+}
+.input-wrap {
+  position: absolute;
+  left: 50%;
+  bottom: 20rpx;
+  transform: translate(-50%, 0);
+  width: 490rpx;
+  border: 2rpx solid #DDDDDD;
+  border-right: 0;
+  overflow: hidden;
+}
+.input-wrap .input {
+  float: left;
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-right: 2rpx solid #DDDDDD;
+  text-align: center;
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+.keyboard {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+}
+.keyboard .key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  height: 25%;
+  background: #fff;
+  text-align: center;
+}
+.keyboard .key:active {
+  background: #D6D6D6;
+}
+.keyboard .key span {
+  font-size: 15pt;
+  font-weight: bold;
+}
+.keyboard .key-space, .keyboard .key-close {
+  background: #D6D6D6;
+}
+.key-close image {
+  width: 20%;
+  height: 30%;
+}
