@@ -18,7 +18,8 @@
     "pages/relationship/relationship",
     "pages/publish/publish",
     "pages/pay/pay",
-    "pages/grade/grade"
+    "pages/grade/grade",
+    "pages/message/messageDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

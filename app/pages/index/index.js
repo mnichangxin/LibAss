@@ -59,7 +59,6 @@ function pageLoad(url, scope, object) {
   });
 }
 
-
 Page({
   // 初始化数据
   data: {
@@ -92,10 +91,10 @@ Page({
     wx.scanCode({
       success: function(res) {
         console.log(res);
-        var result = res.result;
-        wx.switchTab({
-          url: '../me/me'
-        });
+        var result = JSON.parse(res.result);
+
+        showTip(result.doWhat);
+
         if (result.doWhat == 'js') {
           wx.request({
             url: 'https://85293008.qcloud.la/wxapp/soft/qrcode_js.action',
@@ -105,6 +104,8 @@ Page({
               rfid: result.rfid
             },
             success: function(res) {
+              showTip(res.data);
+
               if(res.data.code == 0) {
                 showTip(res.data.message);
               } else {
@@ -114,15 +115,19 @@ Page({
                   url: '../pay/pay?token=' + getToken.getToken() + '&rfid=' + result.rfid + '&payId=' + payId 
                 });
               }
+            },
+            fail: function() {
+              showTip('fail');
             }
           });
         } else if(result.doWhat == 'cx') {
           wx.navigateTo({
-            url: '../detail/detail?bookId=' + result.bookId
+            url: '../detail/detail?id=' + result.bookId
           });
         }
       },
       fail: function() {
+        showTip('fail!');
         console.log('扫码失败！');
       } 
     });

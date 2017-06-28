@@ -1,9 +1,14 @@
 <!--message.wxml-->
-<view class="container">
+<!--<view class="container">
   <view class="message">
-    <view class="message-cate notice">
-      <image src="../static/icon/notice.png"></image>
-      <text>通知类消息</text>
-    </view>
+    <block wx:for="{{list}}" wx:key="item.id">
+      <navigator class="message-cate notice" url="{{'./messageDetail?title=' + item.title + '&date=' + item.date}}" + >
+        <view class="left">
+          <image src="../static/icon/notice.png"></image>
+          <text class="notice-title">{{item.title}}</text>
+        </view>
+        <text class="notice-date">{{item.date}}</text>
+      </navigator>
+    </block>
   </view>
-</view>
+</view>-->

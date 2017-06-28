@@ -50,16 +50,16 @@ Page({
 
     wx.request({
       url: 'https://85293008.qcloud.la/wxapp/soft/Reserve_order.action',
-      method: 'POST',
       data: {
         token: getToken.getToken(),
         bookId: that.data.book.bookId,
         payId: randomString(8),
-        date: that.data.date_start,
-        time: that.data.data_time
+        date: that.data.date,
+        time: that.data.time
       },
       success: function (res) {
-        showTip(res.data.message);
+        // showTip(res.data.message);
+        console.log(res.data)
 
         if (res.data.data) {
           setTimeout(function () {

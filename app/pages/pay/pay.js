@@ -11,7 +11,6 @@ var showTip = function (title) {
 };
 
 Page({
-
   // 页面初始数据
   data: {
     pay_status: false,
@@ -32,21 +31,24 @@ Page({
       url: 'https://85293008.qcloud.la/wxapp/soft/qrcode_jspay.action',
       method: 'POST',
       data: {
-        token: that.data.token,
-        rfid: that.data.rfid,
-        payId: that.data.payId
+        // token: that.data.token,
+        // rfid: that.data.rfid,
+        // payId: that.data.payId
+        token: '69a45a03-d6d2-4aa0-a06c-a13f40459106',
+        rfid: '',
+        payId: ''
       },
       success: function (res) {
         // console.log(res);
-        showTip(res.data.message);
+        showTip(res);
 
-        if (res.data.data) {
-          setTimeout(function () {
-            wx.switchTab({
-              url: '../index/index'
-            });
-          }, 1000);
-        }
+        // if (res.data.data) {
+        //   setTimeout(function () {
+        //     wx.switchTab({
+        //       url: '../index/index'
+        //     });
+        //   }, 1000);
+        // } 
       },
       fail: function () {
         showTip('支付失败，请重新支付！');
