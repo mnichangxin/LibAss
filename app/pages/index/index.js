@@ -1,6 +1,16 @@
 /* index.js */
 var getToken = require('../utils/getToken.js')
 
+// 模态弹框
+var showTip = function (title) {
+  wx.showToast({
+    title: title,
+    icon: 'success',
+    image: '../static/icon/error.png',
+    duration: 2000
+  });
+};
+
 var page = 1; // 初始页码
 
 // 分页
@@ -63,15 +73,41 @@ Page({
   },
 
   // 扫码
-  scanTap: function () {
+  scanTap: function() {
     wx.scanCode({
-      success: function (res) {
-        // var bookId = JSON.parse(res.result).bookId;
-        console.log(res)
-        wx.switchTab({
-          url: '../me/me'
-        })
-      }
+      success: function(res) {
+        console.log(res);
+        var result = res.result;
+
+        if (result.doWhat == 'js') {
+          wx.request({
+            url: 'https://85293008.qcloud.la/wxapp/soft/qrcode_js.action',
+            data: {
+              token: getToken.getToken(),
+              bookId: result.bookId,
+              rfid: result.rfid
+            },
+            success: function(res) {
+              if(res.data.code == 0) {
+                showTip(res.data.message);
+              } else {
+                var payId = ''; // 随机字符串
+
+                wx.navigateTo({
+                  url: '../pay/pay?token=' + getToken.getToken() + '&rfid=' + result.rfid + '&payId=' + payId 
+                });
+              }
+            }
+          })
+        } else if (result.doWhat == 'cx') {
+         wx.navigateTo({
+           url: '../detail/detail?bookId=' + result.bookId
+         });
+        }
+      },
+      fail: function() {
+        console.log('扫码失败！');
+      } 
     });
   },
 

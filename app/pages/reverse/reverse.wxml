@@ -19,23 +19,42 @@
     <view class="tip">预约后请三天内到图书馆取书，过期无效</view>
     <button class="button" bindtap="subscribeTap">确认选择</button>
   </view>
-  <view class="inputboard">
-
-  </view>
-  <view class="keyboard" wx:if="{{pay_status}}">
-    <view class="key" style="border-right: 1rpx solid #D6D6D6; border-bottom: 1rpx solid #D6D6D6;"><span>1</span></view>
-    <view class="key" style="border-right: 1rpx solid #D6D6D6; border-bottom: 1rpx solid #D6D6D6;"><span>2</span></view>
-    <view class="key" style="border-bottom: 1rpx solid #D6D6D6;"><span>3</span></view>
-    <view class="key" style="border-right: 1rpx solid #D6D6D6; border-bottom: 1rpx solid #D6D6D6;"><span>4</span></view>
-    <view class="key" style="border-right: 1rpx solid #D6D6D6; border-bottom: 1rpx solid #D6D6D6;"><span>5</span></view>
-    <view class="key" style="border-bottom: 1rpx solid #D6D6D6;"><span>6</span></view>
-    <view class="key" style="border-right: 1rpx solid #D6D6D6;"><span>7</span></view>
-    <view class="key" style="border-right: 1rpx solid #D6D6D6;"><span>8</span></view>
-    <view class="key"><span>9</span></view>
-    <view class="key key-space"><span></span></view>
-    <view class="key" style="border-top: 1rpx solid #D6D6D6;"><span>0</span></view>
-    <view class="key key-close">
-      <image src="../static/icon/clear.png"></image>
+  <view class="pay" wx:if="{{pay_status}}">
+    <view class="inputboard">
+      <view class="inputboard-title">
+        <image src="../static/icon/close.png" bindtap="handleClose"></image>
+        <text>请输入支付密码</text>
+      </view>
+      <view class="inputboard-shop">
+        <view class="shop-name">借阅助手</view>
+        <view class="shop-money">￥0.5</view>
+      </view>
+      <view class="inputboard-input">
+        <view class="input-wrap">
+          <view class="input">{{keyword_status[0]}}</view>
+          <view class="input">{{keyword_status[1]}}</view>
+          <view class="input">{{keyword_status[2]}}</view>
+          <view class="input">{{keyword_status[3]}}</view>
+          <view class="input">{{keyword_status[4]}}</view>
+          <view class="input">{{keyword_status[5]}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="keyboard">
+      <view class="key" bindtap="handleKey1" style="border-right: 1rpx solid #D6D6D6; border-bottom: 1rpx solid #D6D6D6;"><span>1</span></view>
+      <view class="key" bindtap="handleKey2" style="border-right: 1rpx solid #D6D6D6; border-bottom: 1rpx solid #D6D6D6;"><span>2</span></view>
+      <view class="key" bindtap="handleKey3" style="border-bottom: 1rpx solid #D6D6D6;"><span>3</span></view>
+      <view class="key" bindtap="handleKey4" style="border-right: 1rpx solid #D6D6D6; border-bottom: 1rpx solid #D6D6D6;"><span>4</span></view>
+      <view class="key" bindtap="handleKey5" style="border-right: 1rpx solid #D6D6D6; border-bottom: 1rpx solid #D6D6D6;"><span>5</span></view>
+      <view class="key" bindtap="handleKey6" style="border-bottom: 1rpx solid #D6D6D6;"><span>6</span></view>
+      <view class="key" bindtap="handleKey7" style="border-right: 1rpx solid #D6D6D6;"><span>7</span></view>
+      <view class="key" bindtap="handleKey8" style="border-right: 1rpx solid #D6D6D6;"><span>8</span></view>
+      <view class="key" bindtap="handleKey9"><span>9</span></view>
+      <view class="key key-space"><span></span></view>
+      <view class="key" bindtap="handleKey0" style="border-top: 1rpx solid #D6D6D6;"><span>0</span></view>
+      <view class="key key-close" bindtap="handleClear">
+        <image src="../static/icon/clear.png"></image>
+      </view>
     </view>
   </view>
 </view>
