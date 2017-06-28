@@ -81,3 +81,7 @@
 .keyboard .key-space, .keyboard .key-close {
   background: #D6D6D6;
 }
+.key-close image {
+  width: 20%;
+  height: 20%;
+}

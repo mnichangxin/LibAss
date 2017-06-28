@@ -19,7 +19,10 @@
     <view class="tip">预约后请三天内到图书馆取书，过期无效</view>
     <button class="button" bindtap="subscribeTap">确认选择</button>
   </view>
-  <view class="keyboard">
+  <view class="inputboard">
+
+  </view>
+  <view class="keyboard" wx:if="{{pay_status}}">
     <view class="key" style="border-right: 1rpx solid #D6D6D6; border-bottom: 1rpx solid #D6D6D6;"><span>1</span></view>
     <view class="key" style="border-right: 1rpx solid #D6D6D6; border-bottom: 1rpx solid #D6D6D6;"><span>2</span></view>
     <view class="key" style="border-bottom: 1rpx solid #D6D6D6;"><span>3</span></view>
@@ -31,6 +34,8 @@
     <view class="key"><span>9</span></view>
     <view class="key key-space"><span></span></view>
     <view class="key" style="border-top: 1rpx solid #D6D6D6;"><span>0</span></view>
-    <view class="key key-close"><span></span></view>
+    <view class="key key-close">
+      <image src="../static/icon/clear.png"></image>
+    </view>
   </view>
 </view>

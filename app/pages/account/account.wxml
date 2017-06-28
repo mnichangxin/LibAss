@@ -1,18 +1,26 @@
 <!--  account.wxml -->
 <view class="container">
     <view class="username-setting">
-        <text>昵 称</text>
+        <text>用户名</text>
         <input type="text" value="{{userInfo.username}}" name="username" disabled />
+        <view class="change-wrap"></view>
     </view>
     <view class="username-setting">
         <text>手机号</text>
-        <input type="text" value="{{userInfo.phone}}" name="password" disabled />
+        <input type="text" value="{{userInfo.phone}}" name="phone" disabled="{{input_state.input_phone}}" focus="{{!input_state.input_phone}}" bindinput="phoneChange"/>
+        <view class="change-phone" bindtap="handleChangePhone">修改</view>
     </view>
     <view class="username-setting">
-        <text>密 码</text>
-        <input type="password" value="{{user.password}}" name="password" disabled />
+        <text>密<text class="text-holder">占</text>码</text>
+        <input type="password" value="{{password}}" name="password" disabled="{{input_state.input_pwd}}" focus="{{!input_state.input_pwd}}" bindinput="pwdChange" />
+        <view class="change-password" bindtap="handleChangePwd">修改</view>
+    </view>
+    <view class="username-setting" wx:if="{{new_password}}">
+        <text>新密码</text>
+        <input type="password" value="{{npassword}}" name="npassword" bindinput="npwdChange"/>
+        <view class="change-wrap"></view>
     </view>
     <view class="button">
-        <button class="modify-btn" bindtap="cancelBtn">修改</button>
+        <button class="modify-btn" disabled="{{submit_state}}" bindtap="handleSubmit">提交</button>
     </view>
 </view>

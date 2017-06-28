@@ -19,6 +19,7 @@ function pageLoad(url, scope, object, isPage) {
     // 一次一请求
     wx.request({
       url: url,
+      method: 'POST',
       data: Object.assign({
         token: getToken.getToken(),
         page: page,
@@ -36,8 +37,6 @@ function pageLoad(url, scope, object, isPage) {
           scope.setData({
             book: book
           });
-
-          console.log(page);
 
           page++;
         }

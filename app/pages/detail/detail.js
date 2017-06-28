@@ -12,6 +12,8 @@ Page({
   onLoad: function (options) {
     var that = this;
 
+    console.log(options.id)
+
     wx.request({
       url: 'https://85293008.qcloud.la/wxapp/soft/FindBooks_book.action',
       data: {
@@ -19,6 +21,7 @@ Page({
         bookId: options.id
       },
       success: function(res) {
+        console.log(res.data)
         that.setData({
           book: res.data
         });

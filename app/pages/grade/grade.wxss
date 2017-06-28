@@ -1,0 +1,40 @@
+/* grade.wxss */
+.container {
+  width: 100%;
+}
+.card {
+  position: absolute;
+  top: 30rpx;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 90%;
+  height: 400rpx;
+  border-radius: 6rpx;
+  background-color: #5E5E5E;
+}
+.vip, .score, .count, .time {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #E1D85D;
+  font-size: 14pt;
+}
+.vip {
+  font-style: italic;
+}
+.vip text, .score text, .count text, .time text {
+  color: #E3E3E3;
+}
+.regular {
+  margin-top: 500rpx;
+  padding: 0 30rpx;
+  font-size: 12pt;
+  color: #ccc;
+}
+.reg-content {
+  margin-top: 20rpx;
+}
+.reg-content view {
+  margin-top: 20rpx;
+}
+

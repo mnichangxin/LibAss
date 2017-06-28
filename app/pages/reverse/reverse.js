@@ -14,7 +14,8 @@ Page({
     date: '仅能预约当前三天',
     time: '仅能预约开馆时间',
     date_start: '',
-    date_end: ''
+    date_end: '',
+    pay_status: false
   },
 
   // 事件处理函数
@@ -42,9 +43,14 @@ Page({
   subscribeTap: function() {
     var that = this;
 
+    this.setData({
+      pay_status: true
+    });
+
     isLogin.isLogin(function() {
       wx.request({
         url: 'https://85293008.qcloud.la/wxapp/soft/Reserve_order.action',
+        mmethod: 'POST',
         data: {
           token: getToken.getToken(),
           bookId: that.data.book.bookId,

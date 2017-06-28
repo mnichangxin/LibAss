@@ -2,6 +2,15 @@
 var isLogin = require('../utils/isLogin.js');
 var getToken = require('../utils/getToken.js');
 
+var showTip = function (title) {
+  wx.showToast({
+    title: title,
+    icon: 'success',
+    image: '../static/icon/error.png',
+    duration: 2000
+  });
+};
+
 Page({
   // 页面初始数据
   data: {
@@ -34,7 +43,11 @@ Page({
           bookId: that.data.book.bookId,
         },
         success: function (res) {
-          console.log(res);
+          if (res.data.data) {
+            showTip(res.data.message);
+          } else {
+            showTip(res.data.message);
+          }
         }
       });
     }, function () {

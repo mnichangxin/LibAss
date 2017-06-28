@@ -17,7 +17,7 @@ function isLogin(callback, error) {
               success: function (res) {
                 if (res.data.code == 0) {
                   console.log('登录成功');
-                  console.log(res);
+                  console.log(res.data.status);
                   callback(); // 执行回调函数
                 } else {
                   console.log('登录失败，session不一致');

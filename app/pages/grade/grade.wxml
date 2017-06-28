@@ -1,0 +1,20 @@
+<!--grade.wxml-->
+<view class="container">
+  <view class="card">
+    <view class="vip"><text class="vip-text">VIP </text><text class="vip-name">{{grade.vip}}</text></view>
+    <view class="score"><text>信用分：</text>{{grade.creditScore}}</view>
+    <view class="count"><text>可借阅数目：</text>{{grade.bookCount}}</view>
+    <view class="time"><text>可借阅时间：</text>{{grade.takeTime}}</view>
+  </view>
+  <view class="regular">
+    <view class="reg-title">信用分规则：</view>
+    <view class="reg-content">
+      <view>具体的信用分设置如下， 默认为70分</view>
+      <view>a.每次借阅一本书籍成功还书后增加5分， 管理员审核完成若书籍无损坏再次增加5分， 若书籍损坏减10分；</view>
+      <view>b.每次发表书圈。 若点赞量超过7认为是优质书圈信用分则增加5分， 评论他人发起的优质书圈增加1分， 每日限额3分；</view>
+      <view>c.出现超期还书的情况没日扣除5分， 扣完为止；</view>
+      <view>d.出现违规使用情况， 每次酌情扣除10-50分。</view>
+    </view>
+  </view>
+</view>
+ 
