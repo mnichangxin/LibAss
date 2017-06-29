@@ -11,6 +11,10 @@ App({
 
   // 程序初始化事件处理函数
   onLaunch: function () {
-    
+    // wx.getUserInfo({
+    //   success: function(res) {
+    //     console.log(res.userInfo);
+    //   }
+    // })
   }
 });

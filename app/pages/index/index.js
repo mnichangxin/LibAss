@@ -93,7 +93,7 @@ Page({
         console.log(res);
         var result = JSON.parse(res.result);
 
-        showTip(result.doWhat);
+        // showTip(result.doWhat);
 
         if (result.doWhat == 'js') {
           wx.request({
@@ -104,8 +104,6 @@ Page({
               rfid: result.rfid
             },
             success: function(res) {
-              showTip(res.data);
-
               if(res.data.code == 0) {
                 showTip(res.data.message);
               } else {
@@ -124,6 +122,8 @@ Page({
           wx.navigateTo({
             url: '../detail/detail?id=' + result.bookId
           });
+        } else {
+          // showTip(result.doWhat);
         }
       },
       fail: function() {

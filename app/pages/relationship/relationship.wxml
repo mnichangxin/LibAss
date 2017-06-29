@@ -2,25 +2,25 @@
 <view class="container">
   <view class="item" wx:for="{{activities}}" wx:key="i">
     <view class="item-main">
-      <image src="{{item.avatar}}" mode="widthFix" class="head"></image>
+      <image src="{{item.imgSrc}}" mode="widthFix" class="head"></image>
       <view class="content">
-        <view class="nickname">{{item.author}}</view>
-        <view class="text">{{item.content}}</view>
+        <view class="nickname">{{item.username}}</view>
+        <view class="text">{{item.body}}</view>
         <view class="bottom">
-          <view class="time">{{item.time}}</view>
+          <view class="time">{{item.createDate}}</view>
             <view class="interaction">
-            <view class="voteup">
+            <view class="voteup" bindtap="handleVoteup" data-id="{{item.id}}">
               <image src="../static/icon/voteup.png"></image>      
-              <text class="voteup-num">{{item.voteup}}</text>      
+              <text class="voteup-num">{{item.users.length}}</text>      
             </view>  
-            <image src="../static/icon/comment.png" class="comment-btn" bindtap="commentBtn"></image>
+            <image src="../static/icon/comment.png" class="comment-btn" data-id="{{item.id}}" bindtap="commentBtn"></image>
           </view>              
         </view>
-        <view class="comment">
+        <view class="comment" wx:if="{{item.circlesSon.length}}">
           <view class="angle"></view>
-          <view class="comment-item" wx:for="{{item.comment}}" wx:key="j">
-            <text class="comment-author">{{item.author}}：</text>
-            <text class="comment-content">{{item.content}}</text>
+          <view class="comment-item" wx:for="{{item.circlesSon}}" wx:for-item="j" wx:key="j">
+            <text class="comment-author">{{j.username}}：</text>
+            <text class="comment-content">{{j.body}}</text>
           </view>
         </view>
       </view>
@@ -31,7 +31,7 @@
       <textarea auto-focus bindinput="commentInput" bindblur="commentBlur" />
     </view>
     <view class="comment-send">
-      <button class="send-btn" disabled="{{commentbox.disabled}}">发送</button>
+      <button class="send-btn" disabled="{{commentbox.disabled}}" bindtap="handleComment">发送</button>
     </view>
   </view>
 </view>

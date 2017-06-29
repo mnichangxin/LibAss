@@ -1,6 +1,7 @@
 // me.js
 var isLogin = require('../utils/isLogin.js');
 var login = require('../utils/login.js');
+var getToken = require('../utils/getToken.js');
 
 var appInstance = getApp(); // 获取App实例
 
@@ -12,6 +13,7 @@ Page({
       nick_name: '',
       avatar_url: ''
     },
+    vip: '',
     condition: false
   },
 
@@ -35,6 +37,18 @@ Page({
           appInstance.globalData.username = res.userInfo.nickName;
         }
       });
+
+      wx.request({
+        url: 'https://85293008.qcloud.la/wxapp/soft/user_jurisdiction.action',
+        data: {
+          token: getToken.getToken()
+        },
+        success: function(res) {
+          that.setData({
+            vip: res.data.vip
+          });
+        }
+      })
     }, function(){});
   },
 

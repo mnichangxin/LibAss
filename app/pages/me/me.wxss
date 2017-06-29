@@ -34,6 +34,13 @@
   height: 160rpx;
   border-radius: 50%;
 }
+.name {
+  margin-left: 20rpx;
+}
+.vip {
+  font-style: bold;
+  color: #F7CF0D;
+}
 .exit-btn {
   height: 40rpx;
 }
@@ -125,5 +132,6 @@
   top: 25rpx;
   right: 30rpx;
 }
+
 
 

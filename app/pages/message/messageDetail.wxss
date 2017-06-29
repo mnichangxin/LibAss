@@ -1,1 +1,16 @@
 /* messageDetail.wxss */
+.container {
+  padding: 50rpx 30rpx 0;
+
+}
+.message-title {
+  font-size: 14pt;
+}
+.message-content {
+  margin-top: 50rpx;
+  padding: 30rpx;
+  border: 1rpx solid #ccc;
+  line-height: 50rpx;
+  font-size: 13pt; 
+}
+

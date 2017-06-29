@@ -23,14 +23,15 @@ class Aside extends React.Component {
                 },
                 {
                     title: '预约借书',
-                    path: '',
-                    list: [{
-                        text: '预约管理',
-                        path: '/reserve'
-                    }, {
-                        text: '借书管理',
-                        path: '/borrow'
-                    }],
+                    path: '/reserve',
+                    // list: [{
+                    //     text: '预约管理',
+                    //     path: '/reserve'
+                    // }, {
+                    //     text: '借书管理',
+                    //     path: '/borrow'
+                    // }],
+                    list: null,
                     isDown: false
                 },
                 {

@@ -11,25 +11,33 @@ class BookInfo extends React.Component {
         super(props)
 
         this.state = {
-            books: []
+            books: [
+                {
+                    bookId: '9787544253994',
+                    bookTitle: '百年孤独',
+                    bookAuthor: '马尔克斯',
+                    bookCategory: '文学/小说/名著',
+                    bookHolding: 2
+                }
+            ]
         }
 
         this.handleDel = this.handleDel.bind(this)
     }
 
     componentDidMount() {
-        fetch('/wxapp/soft/Linkage_books.action')
-            .then((res) => {
-                return res.json()
-            })
-            .then((data) => {
-                this.setState({
-                    books: data
-                })
-            })
-            .catch((err) => {
-                return err
-            })
+        // fetch('/wxapp/soft/Linkage_books.action')
+        //     .then((res) => {
+        //         return res.json()
+        //     })
+        //     .then((data) => {
+        //         this.setState({
+        //             books: data
+        //         })
+        //     })
+        //     .catch((err) => {
+        //         return err
+        //     })
     }
 
     handleDel(index) {

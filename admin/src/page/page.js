@@ -32,10 +32,10 @@ class Page extends React.Component {
                     path: '/reserve',
                     component: Reserve
                 },
-                {
-                    path: '/borrow',
-                    component: Borrow
-                },
+                // {
+                //     path: '/borrow',
+                //     component: Borrow
+                // },
                 {
                     path: '/three',
                     component: BookInfo

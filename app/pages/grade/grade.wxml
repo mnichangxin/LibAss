@@ -1,9 +1,9 @@
 <!--grade.wxml-->
 <view class="container">
   <view class="card">
-    <view class="vip"><text class="vip-text">VIP </text><text class="vip-name">{{grade.vip}}</text></view>
+    <view class="vip"><text class="vip-text"></text><text class="vip-name">{{grade.vip}}</text></view>
     <view class="score"><text>信用分：</text>{{grade.creditScore}}</view>
-    <view class="count"><text>可借阅数目：</text>{{grade.bookCount}}</view>
+    <view class="count"><text>可借阅天数：</text>{{grade.bookCount}}</view>
     <view class="time"><text>可借阅时间：</text>{{grade.takeTime}}</view>
   </view>
   <view class="regular">

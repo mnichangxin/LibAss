@@ -20,7 +20,8 @@
           <image src="{{user_info.avatar_url}}"></image>
         </view>
         <view class="user-name">
-          <text>{{user_info.nick_name}}</text>
+          <text class="vip">{{vip}}</text>
+          <text class="name">{{user_info.nick_name}}</text>
         </view>
         <view class="exit-btn" bindtap="exitLogin">
           <text>退出登录</text>

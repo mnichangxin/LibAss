@@ -1,8 +1,8 @@
-<!--message.wxml-->
-<!--<view class="container">
+<!message.wxml-->
+<view class="container">
   <view class="message">
     <block wx:for="{{list}}" wx:key="item.id">
-      <navigator class="message-cate notice" url="{{'./messageDetail?title=' + item.title + '&date=' + item.date}}" + >
+      <navigator class="message-cate notice" url="{{'./messageDetail?title=' + item.title + '&body=' + item.body}}" >
         <view class="left">
           <image src="../static/icon/notice.png"></image>
           <text class="notice-title">{{item.title}}</text>
@@ -11,4 +11,4 @@
       </navigator>
     </block>
   </view>
-</view>-->
+</view>

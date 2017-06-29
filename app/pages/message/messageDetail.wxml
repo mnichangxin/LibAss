@@ -1,5 +1,5 @@
 <!--messageDetail.wxml-->
 <view class="container">
-  <view class="message-title">通知类消息</view>
-  <view class="message-content">消息内容</view>
+  <view class="message-title">{{title}}</view>
+  <view class="message-content">{{body}}</view>
 </view>

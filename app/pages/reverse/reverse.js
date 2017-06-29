@@ -58,8 +58,8 @@ Page({
         time: that.data.time
       },
       success: function (res) {
-        // showTip(res.data.message);
-        console.log(res.data)
+        showTip(res.data.message);
+        // console.log(res.data);
 
         if (res.data.data) {
           setTimeout(function () {

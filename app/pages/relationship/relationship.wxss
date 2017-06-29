@@ -3,12 +3,14 @@
 .item {
   margin-top: 20rpx;
   padding: 20rpx;
+  width: 90%;
   border-bottom: 1px solid #ccc;
 }
 .item-main {
   display: flex;
   justify-content: space-between;
   margin-top: 20rpx;
+  width: 100%;
 }
 .head {
   width: 12%;

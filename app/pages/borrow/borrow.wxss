@@ -12,7 +12,7 @@
   text-align: center;
   color: #ECECEC;
 }
-.book-id, .book-title, .borrow-date, .return-date {
+.book-id, .book-title, .borrow-date, .order-id, .order-date, .return-date {
   margin-top: 20rpx;
   font-size: 12pt;
   text-align: center;

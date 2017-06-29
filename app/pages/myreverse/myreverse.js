@@ -1,27 +1,35 @@
 // myreverse.js
 var common = require('../utils/getDateStr.js');
+var getToken = require('../utils/getToken.js');
 
 Page({
 
   // 页面初始数据
   data: {
-    myreverse: [
-      {
-        id: 'ISBN9901', // 图书ID
-        book_title: '百年孤独', // 图书名称
-        reverser_date: '2017-05-01', // 预订时间
-        get_date: '2017-05-03' // 应取日期
-      }
-    ],
+    myreverse: [],
     condition: true
   },
 
   // 事件处理函数
   onLoad: function (options) {
-    if (this.data.myreverse.length == 0) {
-      this.setData({
-        condition: false
-      });
-    }
+    var that = this;
+
+    wx.request({
+      url: 'https://85293008.qcloud.la/wxapp/soft/Reserve_yds.action',
+      data: {
+        token: getToken.getToken()
+      },
+      success: function (res) {
+        if (that.data.length == 0) {
+          that.setData({
+            condition: false
+          });
+        } else {
+          that.setData({
+            myreverse: res.data
+          });
+        }
+      }
+    });    
   }
 });
