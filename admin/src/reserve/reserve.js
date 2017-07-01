@@ -1,5 +1,6 @@
 import React from 'react'
 import 'whatwg-fetch'
+import {Link} from 'react-router-dom'
 import styles from './reserve.less'
 
 import {Section} from '../section/section.js'
@@ -11,12 +12,11 @@ class Reserve extends React.Component {
         this.state = {
             list: [
                 {
-                   id: '0001',
+                   orderId: '0001',
                    username: 'mnichangxin',
-                   bookname: '百年孤独',
-                   status: 0,
-                   date: '2015-09-12',
-                   pay: '已支付'
+                   bookName: '百年孤独',
+                   status: '已支付',
+                   createDate: '2015-09-12'
                 }
             ]    
         }
@@ -25,16 +25,16 @@ class Reserve extends React.Component {
     render() {
         const section_title = '预约借书'
         const box_title = '预约管理'
-        const box_content = <div className={reverse}>
-             <table className={style.table}>
+        const box_content = <div className={styles.reserve}>
+            <table className={styles.table}>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>昵称</th>
-                        <th>借阅书籍</th>
-                        <th>借阅/预约</th>
-                        <th>应还时间/应取时间</th>
-                        <th>支付状态</th>
+                        <th>订单ID</th>
+                        <th>用户昵称</th>
+                        <th>书籍名</th>
+                        <th>状态</th>
+                        <th>创建时间</th>
+                        <th>管理</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,13 +42,20 @@ class Reserve extends React.Component {
                         this.state.list.map((item, index) => {
                             return (
                                 <tr key={index}>
-                                   <td></td>
-                                </tr> 
+                                    <td>{item.orderId}</td>
+                                    <td>{item.username}</td>
+                                    <td>{item.bookName}</td>
+                                    <td>{item.status}</td>
+                                    <td>{item.createDate}</td>
+                                    <td>
+                                        <Link to="" className={styles.edit}>管理</Link>
+                                    </td>
+                                </tr>
                             )
                         })
                     }
                 </tbody>
-             </table>
+            </table>
         </div>
 
         return (

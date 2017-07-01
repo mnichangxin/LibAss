@@ -1,46 +1,51 @@
 import React from 'react'
 import 'whatwg-fetch'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import styles from './bookshelves.less'
+import styles from './vip.less'
 
 import {Section} from '../section/section.js'
 
-class BookShelves extends React.Component {
+class Vip extends React.Component {
     constructor(props) {
         super(props)
         
         this.state = {
-            list: [
+            users: [
                 {
-                    bookId: '9787544253994',
-                    bookName: '百年孤独'
+                    username: '李昶昕',
+                    score: 70,
+                    vip: '普通会员',
+                    bookCount: 2,
+                    takeTime: 30
                 }
             ]
         }
     }
 
     render() {
-        const section_title = '书籍管理'
-        const box_title = '书籍上架'
+        const section_title = '用户管理'
+        const box_title = '信用等级'
         const box_content = <div className={styles.bookshelves}>
             <table className={styles.table}>
                 <thead>
                     <tr>
-                        <th>已入库图书ID</th>
-                        <th>书籍名</th>
-                        <th>编辑信息</th>
+                        <th>昵称</th>
+                        <th>信用分数</th>
+                        <th>会员等级</th>
+                        <th>可借阅本数</th>
+                        <th>可借阅时间</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        this.state.list.map((item, index) => {
+                        this.state.users.map((item, index) => {
                             return (
                                 <tr key={index}>
-                                    <td>{item.bookId}</td>
-                                    <td>{item.bookName}</td>
-                                    <td>
-                                        <Link to="" className={styles.edit}>编辑上架</Link>
-                                    </td>
+                                    <td>{item.username}</td>
+                                    <td>{item.score}</td>
+                                    <td>{item.vip}</td>
+                                    <td>{item.bookCount}</td>
+                                    <td>{item.takeTime}</td>
                                 </tr>
                             )
                         })
@@ -59,4 +64,4 @@ class BookShelves extends React.Component {
     }
 }
 
-export {BookShelves}
+export {Vip}

@@ -10,6 +10,18 @@ class Aside extends React.Component {
         this.state = { 
             list: [
                 {
+                    title: '用户管理',
+                    path: '',
+                    list: [{
+                        text: '账户信息',
+                        path: '/account'
+                    }, {
+                        text: '信用等级',
+                        path: '/vip'
+                    }],
+                    isDown: false
+                },
+                {
                     title: '书籍管理',
                     path: '',
                     list: [{
@@ -22,21 +34,14 @@ class Aside extends React.Component {
                     isDown: false
                 },
                 {
-                    title: '预约借书',
+                    title: '订单管理',
                     path: '/reserve',
-                    // list: [{
-                    //     text: '预约管理',
-                    //     path: '/reserve'
-                    // }, {
-                    //     text: '借书管理',
-                    //     path: '/borrow'
-                    // }],
                     list: null,
                     isDown: false
                 },
                 {
-                    title: '订单管理',
-                    path: '/four',
+                    title: '书圈管理',
+                    path: '/circle',
                     list: null,
                     isDown: false
                 }
